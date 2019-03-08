@@ -1,17 +1,17 @@
-var typescript = require('rollup-plugin-typescript2');
-var babel = require('rollup-plugin-babel');
+const typescript = require('rollup-plugin-typescript2');
+const babel = require('rollup-plugin-babel');
 
-var pkg = require('../package.json');
+const pkg = require('../package.json');
 
 // compatible with sn-js-utils and @CozySnail/sn-js-utils
 // @CozySnail/sn-js-utils -> sn-js-utils
-var name = pkg.name.split('/').pop();
+const name = pkg.name.split('/').pop();
 // @CozySnail/sn-js-utils -> CozySnail_sn-js-utils
 // var name = pkg.name.replace('@', '').replace(/\//g, '_');
-var version = pkg.version;
+const version = pkg.version;
 
-var banner =
-`/*!
+const banner =
+    `/*!
  * ${pkg.name} ${version} (https://github.com/CozySnail/sn-js-utils)
  * API https://github.com/CozySnail/sn-js-utils/blob/master/doc/api.md
  * Copyright 2017-${(new Date).getFullYear()} snail. All Rights Reserved
@@ -19,7 +19,7 @@ var banner =
  */
 `;
 
-var type = pkg.srctype === 'ts' ? 'ts' : 'js';
+const type = pkg.srctype === 'ts' ? 'ts' : 'js';
 
 function getCompiler(opt) {
     if (type === 'js') {
@@ -54,7 +54,7 @@ function getCompiler(opt) {
 
     opt = opt || {
         tsconfigOverride: { compilerOptions : { module: 'ES2015' } }
-    }
+    };
 
     return typescript(opt);
 }

@@ -1,12 +1,12 @@
 // rollup.config.js
 // umd
-var nodeResolve = require('rollup-plugin-node-resolve');
-var commonjs = require('rollup-plugin-commonjs');
-var uglify = require('rollup-plugin-uglify');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const uglify = require('rollup-plugin-uglify');
 
-var common = require('./rollup.js');
+const common = require('./rollup.js');
 
-var prod = process.env.NODE_ENV === 'production';
+const prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
     input: 'src/index.' + common.type,
@@ -27,6 +27,6 @@ module.exports = {
             include: 'node_modules/**',
         }),
         common.getCompiler(),
-        (prod && uglify())
+        prod && uglify()
     ]
 };
