@@ -17,14 +17,11 @@ module.exports = {
             "error",
             "unix"
         ],
-        "quotes": [
-            "error",
-            "single"
-        ],
+        "quotes": 0,
         "semi": [
             "error",
             "always"
         ],
-        "no-console": 0
+        "no-console": 0,
     }
 };
