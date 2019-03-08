@@ -22,7 +22,7 @@ module.exports = {
         "no-ex-assign": 2,                  // 禁止给catch语句中的异常参数赋值
         "no-extend-native": 2,              // 禁止扩展native对象
         "no-extra-bind": 2,                 // 禁止不必要的函数绑定
-        "no-extra-parens": 2,               // 禁止非必要的括号
+        "no-extra-parens": 0,               // 可以存在非必要的括号
         "no-extra-semi": 2,                 // 禁止多余的冒号
         "no-fallthrough": 1,                // 禁止switch穿透
         "no-floating-decimal": 2,           // 禁止省略浮点数中的0 .5 3.

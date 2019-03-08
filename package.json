@@ -6,8 +6,8 @@
   "jsnext:main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "sideEffects": false,
-  "srctype": "ts",
-  "scripts": {
+  "srctype": "js",
+  "scripts:ts": {
     "rename": "node rename.js",
     "clean": "rimraf ./dist",
     "lint": "tslint -c tslint.json src/**.ts",
@@ -20,7 +20,7 @@
     "coveralls": "nyc --nycrc-path .nycrc-ts report --reporter=text-lcov | coveralls",
     "release": "npm test && npm run build && git commit -am $npm_package_version && git push && git tag $npm_package_version && git push --tags"
   },
-  "scripts:js": {
+  "scripts": {
     "rename": "node rename.js",
     "clean": "rimraf ./dist",
     "lint": "eslint -c .eslintrc.js src/**.js",

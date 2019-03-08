@@ -1,9 +1,9 @@
 /*eslint-disable*/
 const expect = require('expect.js');
 // js 测试源文件
-// const {SnDateUtil} = require('../src/index.js');
+const {SnDateUtil} = require('../src/index.js');
 // ts 测试编译后文件
-const {SnDateUtil} = require('../src/index.ts');
+// const {SnDateUtil} = require('../src/index.ts');
 
 describe('单元测试', function() {
     describe('formatDate', function() {
