@@ -2,7 +2,8 @@
  * 日期工具类
  * @Author snail
  */
-const SnDateUtil = {
+
+export default {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳
@@ -15,7 +16,7 @@ const SnDateUtil = {
      *  formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS'); // 2016-09-02 第3季度 星期五 13:19:15:792
      *  formatDate(1472793615764); // 2016-09-02 13:20:15
      */
-    formatDate(date, fmt) {
+    formatDate: (date, fmt) => {
         date = (date === undefined || date === null) ? new Date() : date;
         date = typeof date === 'number' ? new Date(date) : date;
         fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
@@ -47,4 +48,3 @@ const SnDateUtil = {
         return fmt;
     },
 };
-export default SnDateUtil;

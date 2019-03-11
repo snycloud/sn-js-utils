@@ -177,7 +177,8 @@
     ],
     // 禁止 finally 内出现 return, continue, break, throw 等
     // finally 会比 catch 先执行
-    "no-unsafe-finally": true
+    "no-unsafe-finally": true,
+    "object-literal-shorthand": false
   },
   "rulesDirectory": [
   ]
