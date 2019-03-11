@@ -7,5 +7,4 @@ export function greeter(person: string) {
 export function testFun() {
     return 'this is test function ';
 }
-
 export const dateUtil = SnDateUtil;
