@@ -1,1 +1,1 @@
-export { default as SnDateUtil } from './SnDateUtil';
+export { default as SnDateUtil } from './date/SnDateUtil';
