@@ -1,11 +1,11 @@
-# [jslib-base](https://github.com/CozySnail/sn-js-utils)
+# [sn-js-utils](https://github.com/CozySnail/sn-js-utils)
 [![](https://img.shields.io/static/v1.svg?label=Powered%20by&message=snail&color=%3CCOLOR%3E)](https://github.com/CozySnail/sn-js-utils)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/CozySnail/sn-js-utils/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/CozySnail/jslib-base.svg?branch=master)](https://travis-ci.org/CozySnail/jslib-base)
-[![Coveralls](https://img.shields.io/coveralls/CozySnail/jslib-base.svg)](https://coveralls.io/github/CozySnail/jslib-base)
-[![npm](https://img.shields.io/badge/npm-0.1.0-orange.svg)](https://www.npmjs.com/package/jslib-base)
-[![NPM downloads](http://img.shields.io/npm/dm/jslib-base.svg?style=flat-square)](http://www.npmtrends.com/jslib-base)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/CozySnail/jslib-base.svg)](http://isitmaintained.com/project/CozySnail/jslib-base "Percentage of issues still open")
+[![Build Status](https://travis-ci.org/CozySnail/sn-js-utils.svg?branch=master)](https://travis-ci.org/CozySnail/sn-js-utils)
+[![Coveralls](https://img.shields.io/coveralls/CozySnail/sn-js-utils.svg)](https://coveralls.io/github/CozySnail/sn-js-utils)
+[![npm](https://img.shields.io/badge/npm-6.8.0-orange.svg)](https://www.npmjs.com/package/sn-js-utils)
+[![NPM downloads](http://img.shields.io/npm/dm/sn-js-utils.svg?style=flat-square)](http://www.npmtrends.com/sn-js-utils)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/CozySnail/sn-js-utils.svg)](http://isitmaintained.com/project/CozySnail/sn-js-utils "Percentage of issues still open")
 
 [English](./README.md) | 简体中文
 

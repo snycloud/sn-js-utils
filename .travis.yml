@@ -4,5 +4,3 @@ node_js:
   - "6"
 after_success:
   - npm run coveralls
-service_name: travis-pro
-repo_token: pGYNO3NqvzSiAKrAFmMIYvCTeY7woIJqF
