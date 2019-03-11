@@ -65,7 +65,7 @@
       "ignore-same-line"
     ],
     // for in 内部必须有 hasOwnProperty
-    "forin": true,
+    "forin": false,
     // 禁止在分支条件判断中有赋值操作
     "no-conditional-assignment": true,
     // 禁止使用 new 来生成 String, Number 或 Boolean

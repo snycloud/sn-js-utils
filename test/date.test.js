@@ -32,4 +32,10 @@ describe('单元测试', function () {
         });
     });
 
+    describe('测试方法 formatDate', function() {
+        it('测试方法 formatDate(1472793615764)', function() {
+            let nowDate = new Date('2016-09-02 12:20:15');
+            expect(utils.dateUtil.formatDate(nowDate, 'yyyy-MM-dd HH:mm:ss')).to.be.equal(utils.dateUtil.formatDate(nowDate, 'yyyy-MM-dd HH:mm:ss'));
+        });
+    });
 });
