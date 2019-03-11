@@ -95,7 +95,7 @@
     // 前者的类型检查更完善
     "prefer-object-spread": true,
     // parseInt 必须传入第二个参数
-    "radix": true,
+    "radix": false,
     // 必须使用 isNaN(foo) 而不是 foo === NaN
     "use-isnan": true,
     //
@@ -137,7 +137,7 @@
     // 禁止使用特殊空白符（比如全角空格）
     "no-irregular-whitespace": true,
     // 禁止使用 JSDoc，因为 TypeScirpt 已经包含了大部分功能
-    "no-redundant-jsdoc": true,
+    "no-redundant-jsdoc": false,
     // 禁止使用三斜杠引入类型定义文件
     "no-reference-import": true,
     // 禁止变量定义时赋值为 undefined

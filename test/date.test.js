@@ -1,48 +1,64 @@
+/* eslint-env jest */
 const expect = require('expect.js');
-
-// js 测试源文件
-// var utils = require('../src/index.js');
-// ts 测试编译后文件
+// 测试 js 源文件
+// var utils = require('../src/index.js'); 此时需要将webstorm 中 TypeScript Recompile on Changes 选项勾选 后会自动生成js源文件
+// 测试 ts 编译后文件
 const utils = require('../src/index.ts');
 
-/* eslint-env jest */
-describe('单元测试', function () {
+describe('测试 DateUtil 工具类', function () {
+    // 将日期格式化成指定格式的字符串
     describe('测试 formatDate 方法', function () {
         it('默认无参情况', function () {
-            expect(utils.DateUtil.formatDate(null, null)).to.be.equal(utils.DateUtil.formatDate(null, null));
+            let result = utils.DateUtil.formatDate(null, null);
+            expect(result).to.be.equal(result);
         });
-    });
 
-    describe('测试 formatDate 方法', function () {
         it('参数形式为 yyyy-MM-dd 形式', function () {
-            expect(utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd')).to.be.equal(utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd'));
+            let result = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd');
+            expect(result).to.be.equal(result);
         });
-    });
 
-    describe('测试 formatDate 方法', function () {
         it('参数形式为 yyyy-MM-dd 第q季度 w HH:mm:ss:SSS', function () {
-            let str = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 w HH:mm:ss:SSS');
-            expect(str).to.be.equal(str);
+            let result = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 w HH:mm:ss:SSS');
+            expect(result).to.be.equal(result);
         });
-    });
 
-    describe('测试 formatDate 方法', function () {
         it('参数形式为 yyyy-MM-dd 第q季度 www HH:mm:ss:SSS', function () {
-            let str = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS');
-            expect(str).to.be.equal(str);
+            let result = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS');
+            expect(result).to.be.equal(result);
         });
-    });
 
-    describe('测试 formatDate 方法', function () {
         it('参数形式为 1472793615764 (时间戳)', function () {
-            expect(utils.DateUtil.formatDate(1472793615764, null)).to.be.equal(utils.DateUtil.formatDate(1472793615764, null));
+            let result = utils.DateUtil.formatDate(1472793615764, null);
+            expect(result).to.be.equal(result);
         });
-    });
 
-    describe('测试 formatDate 方法', function () {
         it('参数形式为 yyyy-MM-dd HH:mm:ss', function () {
             let nowDate = new Date('2016-09-02 12:20:15');
-            expect(utils.DateUtil.formatDate(nowDate, 'yyyy-MM-dd HH:mm:ss')).to.be.equal(utils.DateUtil.formatDate(nowDate, 'yyyy-MM-dd HH:mm:ss'));
+            let result = utils.DateUtil.formatDate(nowDate, 'yyyy-MM-dd HH:mm:ss');
+            expect(result).to.be.equal(result);
+        });
+    });
+
+    // 将字符串解析成日期
+    describe('测试 parseDate 方法', function () {
+        it('参数形式为 yyyy-MM-dd', function () {
+            let result = utils.DateUtil.parseDate('2016-08-11');
+            expect(result).to.be.equal(result);
+        });
+
+        it('参数形式为 yyyy-MM-dd', function () {
+            let result = utils.DateUtil.parseDate('2019-03-11 18:52:49', 'yyyy-MM-dd HH:mm:ss');
+            expect(result).to.be.equal(result);
+        });
+    });
+
+    // 将字符串解析成日期
+    describe('测试 formatDateToFriendly 方法', function () {
+        it('参数形式为 new Date(\'2017-11-11\')', function () {
+            let result = utils.DateUtil.formatDateToFriendly(new Date('2017-11-11'));
+            expect(result).to.be.equal(result);
         });
     });
 });
+
