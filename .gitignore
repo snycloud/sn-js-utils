@@ -1,5 +1,3 @@
-!index.d.ts
-*.d.ts
 coverage
 node_modules
 dist
