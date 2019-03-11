@@ -1,6 +1,6 @@
 // rollup.config.js
 // commonjs
-import common from './rollup.js';
+const common = require('./rollup.js');
 
 module.exports = {
     input: 'src/index.' + common.type,
@@ -13,7 +13,7 @@ module.exports = {
     },
     plugins: [
         common.getCompiler({
-            tsconfigOverride: {compilerOptions: {declaration: true, module: 'ES2015'}},
+            tsconfigOverride: { compilerOptions : { declaration: true, module: 'ES2015' } },
             useTsconfigDeclarationDir: true
         })
     ]
