@@ -1,1 +1,0 @@
-{"code":"export { default as SnDateUtil } from './SnDateUtil';\r\n","dts":{"name":"/Users/weijia/dev/JZWorkspaces/FrontProjects/sn-js-utils/index.d.ts","writeByteOrderMark":false,"text":"export { default as SnDateUtil } from './SnDateUtil';\r\n"}}
