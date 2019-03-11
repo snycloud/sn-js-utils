@@ -1,33 +1,21 @@
-/*eslint-disable*/
 const expect = require('expect.js');
+
 // js 测试源文件
-const {SnDateUtil} = require('../src/index.js');
+// var utils = require('../src/index.js');
 // ts 测试编译后文件
-// const {SnDateUtil} = require('../src/index.ts');
+const utils = require('../src/index.ts');
 
-describe('单元测试', function() {
-    describe('formatDate', function() {
-        it('formatDate()', function() {
-            expect(SnDateUtil.formatDate(null, null)).to.be.equal(SnDateUtil.formatDate(null, null));
+/* eslint-env jest */
+describe('单元测试', function () {
+    describe('测试方法 greeter', function () {
+        it('测试方法 greeter', function () {
+            expect(utils.greeter('snail')).not.to.equal(1);
         });
     });
 
-    describe('formatDate', function() {
-        it('formatDate(new Date(), \'yyyy-MM-dd\')', function() {
-            expect(SnDateUtil.formatDate(new Date(), 'yyyy-MM-dd')).to.be.equal(SnDateUtil.formatDate(new Date(), 'yyyy-MM-dd'));
-        });
-    });
-
-    describe('formatDate', function() {
-        it('formatDate(new Date(), \'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS\')', function() {
-            let str = SnDateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS');
-            expect(str).to.be.equal(str);
-        });
-    });
-
-    describe('formatDate', function() {
-        it('formatDate(1472793615764)', function() {
-            expect(SnDateUtil.formatDate(1472793615764, null)).to.be.equal(SnDateUtil.formatDate(1472793615764, null));
+    describe('测试方法 testFun', function () {
+        it('测试方法 testFun', function () {
+            expect(utils.testFun()).not.to.equal(1);
         });
     });
 });

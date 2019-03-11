@@ -2,8 +2,7 @@
  * 日期工具类
  * @Author snail
  */
-
-export default {
+const SnDateUtil = {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳
@@ -50,3 +49,4 @@ export default {
         return fmt;
     },
 };
+export default SnDateUtil;
