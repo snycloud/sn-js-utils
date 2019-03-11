@@ -3,6 +3,7 @@ config
 demo
 src
 test
+.rpt2_cache
 .babelrc
 .editorconfig
 .eslintrc.js

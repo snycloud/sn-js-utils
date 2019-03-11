@@ -1,15 +1,15 @@
-var path = require('path');
+const path = require('path');
 
-var cdkit = require('cdkit')
+const cdkit = require('cdkit');
 
-var fromName = 'sn-js-utils';
-var toName = 'sn-js-utils';
+const fromName = 'sn-js-utils';
+const toName = 'sn-js-utils';
 
-function getFullPath (filename) {
-    return path.join(__dirname, filename)
+function getFullPath(filename) {
+    return path.join(__dirname, filename);
 }
 
-var map = [
+const map = [
     getFullPath('package.json'),
     getFullPath('README.md'),
     getFullPath('config/rollup.js'),
