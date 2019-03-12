@@ -3,19 +3,19 @@ const babel = require('rollup-plugin-babel');
 
 const pkg = require('../package.json');
 
-// compatible with jslib-base and @yanhaijing/jslib-base
-// @yanhaijing/jslib-base -> jslib-base
+// compatible with jslib-base and @CozySnail/sn-js-utils
+// @CozySnail/sn-js-utils -> sn-js-utils
 const name = pkg.name.split('/').pop();
-// @yanhaijing/jslib-base -> yanhaijing_jslib-base
+// @CozySnail/sn-js-utils -> CozySnail_sn-js-utils
 // var name = pkg.name.replace('@', '').replace(/\//g, '_');
 const version = pkg.version;
 
 const banner =
     `/*!
- * ${pkg.name} ${version} (https://github.com/yanhaijing/jslib-base)
- * API https://github.com/yanhaijing/jslib-base/blob/master/doc/api.md
- * Copyright 2017-${(new Date).getFullYear()} yanhaijing. All Rights Reserved
- * Licensed under MIT (https://github.com/yanhaijing/jslib-base/blob/master/LICENSE)
+ * ${pkg.name} ${version} (https://github.com/CozySnail/sn-js-utils)
+ * API https://github.com/CozySnail/sn-js-utils/blob/master/doc/api.md
+ * Copyright 2017-${(new Date).getFullYear()} CozySnail. All Rights Reserved
+ * Licensed under MIT (https://github.com/CozySnail/sn-js-utils/blob/master/LICENSE)
  */
 `;
 
