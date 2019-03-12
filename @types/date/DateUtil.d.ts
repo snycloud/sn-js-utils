@@ -15,7 +15,7 @@ declare const _default: {
      *  formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS'); // 2016-09-02 第3季度 星期五 13:19:15:792
      *  formatDate(1472793615764); // 2016-09-02 13:20:15
      */
-    formatDate: (date: any, fmt: any) => any;
+    formatDate: (date?: any, fmt?: any) => any;
     /**
      * 将字符串解析成日期
      * @param str 输入的日期字符串，如'2014-09-13'
@@ -33,6 +33,7 @@ declare const _default: {
      * @param {Object} date 如: new Date('2017-11-11')
      * @returns {string} 解析后的友好化日期格式
      */
-    formatDateToFriendly: (date: any) => any;
+    formatDateToFriendly: (date?: Date) => any;
+    test: (first: any, second: any) => any;
 };
 export default _default;
