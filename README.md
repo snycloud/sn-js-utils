@@ -7,177 +7,147 @@
 [![NPM downloads](http://img.shields.io/npm/dm/sn-js-utils.svg?style=flat-square)](http://www.npmtrends.com/sn-js-utils)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/CozySnail/sn-js-utils.svg)](http://isitmaintained.com/project/CozySnail/sn-js-utils "Percentage of issues still open")
 
-English | [简体中文](./README.zh-CN.md)
+[English](README.en-US.md) | 简体中文
 
-The best third party `JS|TS` library scaffold. By forking or cloning the repository, you can complete the basic framework for building a new library.
+最好用的 `JS|TS` 第三方库脚手架，fork 或 clone 本仓库，即可搭建完成一个新库的基础框架
 
-**The library that based sn-js-utils can be shared to the [jsmini](https://github.com/jsmini) platform**
+## :star: 特性
 
-## Characteristics
+- 支持ES6+或TypeScript编写源码，编译生成生产代码
+- 集成 babel-runtime (默认关闭)
+- 第三方依赖自动注入（自动剔除第三方依赖无用代码tree shaking）
+- 多环境支持（支持浏览器原生，支持AMD，CMD，支持Webpack，Rollup，fis等，支持Node）
+- 集成代码风格校验(eslint|tslint)
+- 集成单元测试环境（mocha）
+- 集成测试覆盖率（istanbul）
+- 集成可持续构建工具[travis-ci](https://www.travis-ci.org/)
+- 支持自定义banner
+- 支持一键重命名
+- 支持[sideEffects](https://juejin.im/post/5b4ff9ece51d45190c18bb65)
+- 集成ISSUE_TEMPLATE
 
-- Coded in ES6+ or TypeScript, easily compile and generate production code
-- Integrated babel-runtime (Default set to closed)
-- Third parties rely on automatic injection(Tree shaking)
-- Supports multi environment, including default browsers, Node, AMD, CMD, Webpack, Rollup, Fis and so on.
-- Integrated code style lint(eslint|tslint).
-- Integrated unit test environment(mocha).
-- Integrated test coverage(istanbul).
-- Integrated continuous integration tool [travis-ci](https://www.travis-ci.org/)
-- Supports banner
-- Supports one-key renaming.
-- Supports [sideEffects](https://github.com/webpack/webpack/tree/master/examples/side-effects)
-- Integrated Issue template
-- Integrated [jsmini](https://github.com/jsmini)
+> 注意: 如果不同时使用 `export` 与 `export default` 可打开 `legacy模式`，`legacy模式` 下的模块系统可以兼容 `ie6-8`，见rollup配置文件
 
-**Note:** When `export` and `export default` are not used at the same time, there is the option to 
-turn on `legacy mode`. Under `legacy mode`, the module system can be compatible with `IE6-8`. For more information on legacy mode, 
-please see rollup supplemental file. 
-
-## Compatibility
-Unit tests guarantee support on the following environment:
+## :pill: 兼容性
+单元测试保证支持如下环境：
 
 | IE   | CH   | FF   | SF   | OP   | IOS  | Android   | Node  |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----- |
 | 6+   | 29+ | 55+  | 9+   | 50+  | 9+   | 4+   | 4+ |
 
-> Note: Compiling code depend on ES5, so you need import [es5-shim](http://github.com/es-shims/es5-shim/) to compatible with `IE6-8`, here is a [demo](./demo/demo-global.html)
+**注意：编译代码依赖ES5环境，对于ie6-8需要引入[es5-shim](http://github.com/es-shims/es5-shim/)才可以兼容，可以查看[demo/demo-global.html](./demo/demo-global.html)中的例子**
 
-## Directory
+## :open_file_folder: 目录介绍
+
 ```
-├── demo - Using demo
-├── dist - Compiler output code
-├── doc - Project documents
-├── src - Source code directory
-├── test - Unit tests
-├── CHANGELOG.md - Change log
-└── TODO.md - Planned features
+.
+├── demo 使用demo
+├── dist 编译产出代码
+├── doc 项目文档
+├── src 源代码目录
+├── test 单元测试
+├── CHANGELOG.md 变更日志
+└── TODO.md 计划功能
 ```
 
-## Usage Instructions
+## :rocket: 使用者指南
 
-Using npm, download and install the code. 
+通过npm下载安装代码
 
 ```bash
 $ npm install --save sn-js-utils
 ```
 
-For node environment：
+如果你是node环境
 
 ```js
 var base = require('sn-js-utils');
 ```
 
-For webpack or similar environment：
+如果你是webpack等环境
 
 ```js
 import base from 'sn-js-utils';
 ```
 
-For requirejs environment:
+如果你是requirejs环境
 
 ```js
-requirejs(['node_modules/sn-js-utils/dist/index.aio.js'], function (base) {
-    // do something...
+requirejs(['sn-js-utils'], function (base) {
+    // xxx
 })
 ```
 
-For browser environment:
+如果你是浏览器环境
 
 ```html
 <script src="node_modules/sn-js-utils/dist/index.aio.js"></script>
 ```
 
-## Documents
-[API](./doc/api.md)
+## :bookmark_tabs: 文档
+[API](./doc/api.zh-CN.md)
 
-## Contribution Guide
+## :kissing_heart: 贡献者指南
 
-How to switch `JS` and `TS`
+支持JS 和 TS 切换，需要更改下面的地方
 
-- `srctype` and `scripts` in `package.json`
-- `require` file of `test/test.js`
-- `require` file of `test/browser/index.html`
+-  `package.json`中的`srctype`和`scripts`
+-  `test/test.js`中`require`文件的方式
+-  `test/browser/index.html`中`require`文件的方式
 
-For the first time to run, you need to install dependencies firstly.
+首次运行需要先安装依赖
 
 ```bash
 $ npm install
 ```
 
-To build the project:
+一键打包生成生产代码
 
 ```bash
 $ npm run build
 ```
 
-To run unit tests:
+运行单元测试:
 
 ```bash
 $ npm test
 ```
 
-> Note: The browser environment needs to be tested manually under ```test/browser```
+> 注意：浏览器环境需要手动测试，位于`test/browser`
 
-Modify the version number in package.json, modify the version number in README.md, modify the CHANGELOG.md, and then release the new version.
+修改 package.json 中的版本号，修改 README.md 中的版本号，修改 CHANGELOG.md，然后发布新版
 
 ```bash
 $ npm run release
 ```
 
-Publish the new version to NPM.
+将新版本发布到npm
 
 ```bash
 $ npm publish
 ```
 
-For renaming project, you need change `fromName` and `toName` in `rename.js`, then run `npm run rename`, this command will auto renaming names for below files:
+重命名项目名称，首次初始化项目是需要修改名字，或者后面项目要改名时使用，需要修改`rename.js`中的`fromName`和`toName`，然后运行 `npm run rename`，这条命令会自动重命名下面文件中的名字
 
-- The messages in README.md
-- The messages in package.json
-- The messages in config/rollup.js
-- The repository name in test/browser/index.html
-- Library name in demo/demo-global.html
+- README.md 中的信息
+- package.json 中的信息
+- config/rollup.js 中的信息
+- test/browser/index.html 中的仓库名称
+- demo/demo-global.html 中的仓库名称
 
-## Contributors
+## 贡献者列表
 
 [contributors](https://github.com/CozySnail/sn-js-utils/graphs/contributors)
 
-## Change Log
+## :gear: 更新日志
 [CHANGELOG.md](./CHANGELOG.md)
 
-## TODO
+## :airplane: 计划列表
 [TODO.md](./TODO.md)
 
-## Current Users
+## :bulb: 谁在使用
 
-jsmini
-
-- [type](https://github.com/jsmini/type)
-- [is](https://github.com/jsmini/is)
-- [inherits](https://github.com/jsmini/inherits)
-- [guid](https://github.com/jsmini/guid)
-- [clone](https://github.com/jsmini/clone)
-- [extend](https://github.com/jsmini/extend)
-- [event](https://github.com/jsmini/event)
-- [url](https://github.com/jsmini/url)
-- [querystring](https://github.com/jsmini/querystring)
-- [pubsub](https://github.com/jsmini/pubsub)
-- [load](https://github.com/jsmini/load)
-- [md5](https://github.com/jsmini/md5)
-- [console](https://github.com/jsmini/console)
-
-other
-
-- [littlejs](https://github.com/Zenquan/littlejs)
-- [axios-miniprogram-adapter](https://github.com/bigmeow/axios-miniprogram-adapter)
-- [react-compare](https://github.com/fXy-during/react-compare)
-- [z](https://github.com/PinghuaZhuang/z)
-- [xidux](https://github.com/ximolang/xidux)
-- [qrcode-decoder](https://github.com/yugasun/qrcode-decoder)
-- [search-util](https://github.com/The-End-Hero/search-util)
-- [vue-validate](https://github.com/yesixuan/vue-validate)
-- [validator](https://github.com/yesixuan/common-validate)
-
-## Relative links
+## 相关链接
 
 - [typescript-library-template](https://github.com/jiumao-fe/typescript-library-template)
+

@@ -3,7 +3,7 @@ const babel = require('rollup-plugin-babel');
 
 const pkg = require('../package.json');
 
-// compatible with jslib-base and @CozySnail/sn-js-utils
+// compatible with sn-js-utils and @CozySnail/sn-js-utils
 // @CozySnail/sn-js-utils -> sn-js-utils
 const name = pkg.name.split('/').pop();
 // @CozySnail/sn-js-utils -> CozySnail_sn-js-utils
