@@ -61,20 +61,20 @@ $ npm install --save sn-js-utils
 For node environment：
 
 ```js
-var base = require('sn-js-utils');
+const snJsUtils = require('../dist/index.js');
 ```
 
 For webpack or similar environment：
 
 ```js
-import base from 'sn-js-utils';
+import { DateUtil } from 'sn-js-utils';
 ```
 
 For requirejs environment:
 
 ```js
-requirejs(['node_modules/sn-js-utils/dist/index.aio.js'], function (base) {
-    // do something...
+requirejs(['node_modules/sn-js-utils/dist/index.aio.js'], function (snJsUtils) {
+    console.log(snJsUtils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd'));
 })
 ```
 

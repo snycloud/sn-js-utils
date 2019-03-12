@@ -61,20 +61,20 @@ $ npm install --save sn-js-utils
 如果你是node环境
 
 ```js
-var base = require('sn-js-utils');
+const snJsUtils = require('../dist/index.js');
 ```
 
 如果你是webpack等环境
 
 ```js
-import base from 'sn-js-utils';
+import { DateUtil } from 'sn-js-utils';
 ```
 
 如果你是requirejs环境
 
 ```js
-requirejs(['sn-js-utils'], function (base) {
-    // xxx
+requirejs(['node_modules/sn-js-utils/dist/index.aio.js'], function (snJsUtils) {
+    console.log(snJsUtils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd'));
 })
 ```
 
