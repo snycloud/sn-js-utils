@@ -41,7 +41,7 @@
     ],
     // 必须使用箭头函数，除非是单独的函数声明或是命名函数
     "only-arrow-functions": [
-      false,
+      true,
       "allow-declarations",
       "allow-named-functions"
     ],
