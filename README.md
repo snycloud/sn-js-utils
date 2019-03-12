@@ -7,7 +7,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/sn-js-utils.svg?style=flat-square)](http://www.npmtrends.com/sn-js-utils)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/CozySnail/sn-js-utils.svg)](http://isitmaintained.com/project/CozySnail/sn-js-utils "Percentage of issues still open")
 
-[English](README.en-US.md) | 简体中文
+简体中文[English] | (README.en-US.md)
 
 最好用的 `JS|TS` 第三方库脚手架，fork 或 clone 本仓库，即可搭建完成一个新库的基础框架
 

@@ -7,7 +7,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/sn-js-utils.svg?style=flat-square)](http://www.npmtrends.com/sn-js-utils)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/CozySnail/sn-js-utils.svg)](http://isitmaintained.com/project/CozySnail/sn-js-utils "Percentage of issues still open")
 
-English | [简体中文](README.md)
+简体中文[English] | (README.md)
 
 The best third party `JS|TS` library scaffold. By forking or cloning the repository, you can complete the basic framework for building a new library.
 
