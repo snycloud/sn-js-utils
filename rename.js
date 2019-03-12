@@ -12,6 +12,7 @@ function getFullPath(filename) {
 const map = [
     getFullPath('package.json'),
     getFullPath('README.en-US.md'),
+    getFullPath('README.md'),
     getFullPath('config/rollup.js'),
     getFullPath('test/browser/index.html'),
     getFullPath('demo/demo-global.html'),
