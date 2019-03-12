@@ -139,17 +139,10 @@ For renaming project, you need change `fromName` and `toName` in `rename.js`, th
 
 [contributors](https://github.com/CozySnail/sn-js-utils/graphs/contributors)
 
-## Change Log
+## :gear: Change Log
 [CHANGELOG.md](./CHANGELOG.md)
 
 ## TODO
 [TODO.md](./TODO.md)
 
-## Current Users
-
-
-other
-
-## Relative links
-
-- [typescript-library-template](https://github.com/jiumao-fe/typescript-library-template)
+## :bulb: Current Users

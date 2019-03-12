@@ -146,8 +146,3 @@ $ npm publish
 [TODO.md](./TODO.md)
 
 ## :bulb: 谁在使用
-
-## 相关链接
-
-- [typescript-library-template](https://github.com/jiumao-fe/typescript-library-template)
-
