@@ -16,6 +16,7 @@ module.exports = {
         // When export and export default are not used at the same time, set legacy to true.
         // legacy: true,
         name: common.name,
+        // name: 'snUtils',
         banner: common.banner,
     },
     plugins: [
