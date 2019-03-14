@@ -344,7 +344,7 @@ describe('测试 DateUtil 工具类', function () {
         });
 
         it('使用时间戳', function () {
-            let initDate = 1451404800000;
+            let initDate = new Date(2015, 11, 30).getTime();
             let expected = new Date(2016, 1, 29);
             let actual = utils.DateUtil.dateAfter(initDate, { month: 2, day: 1 });
             expect(actual).to.be.eql(expected);
@@ -551,7 +551,7 @@ describe('测试 DateUtil 工具类', function () {
         });
 
         it('使用时间戳', function () {
-            let initDate = 1459353600000;
+            let initDate = new Date(2016, 2, 31).getTime();
             let expected = new Date(2016, 1, 29);
             let actual = utils.DateUtil.dateBefore(initDate, { month: 1, day: 1 });
             expect(actual).to.be.eql(expected);
@@ -780,7 +780,7 @@ describe('测试 DateUtil 工具类', function () {
         });
         it('时间戳', function () {
             let expected = 26;
-            let actual = utils.DateUtil.getDayIndexOfYear(1548432000000); // 2019-01-26
+            let actual = utils.DateUtil.getDayIndexOfYear(new Date(2019, 0, 26).getTime()); // 2019-01-26
             expect(actual).to.be.eql(expected);
         });
     });
