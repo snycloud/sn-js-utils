@@ -37,10 +37,13 @@ describe('测试 BaseUtil 工具类', function () {
             expect(utils.BaseUtil.isArray([])).to.be.ok();
         });
         it('[1,2] 应该是 Array', function () {
-            expect(utils.BaseUtil.isArray([1,2])).to.be.ok();
+            expect(utils.BaseUtil.isArray([1, 2])).to.be.ok();
         });
         it('["1","2"] 应该是 Array', function () {
-            expect(utils.BaseUtil.isArray(['1','2'])).to.be.ok();
+            expect(utils.BaseUtil.isArray(['1', '2'])).to.be.ok();
+        });
+        it('[{"name": "张三"},{"age": 12}] 应该是 Array', function () {
+            expect(utils.BaseUtil.isArray([{'name': '张三'}, {'age': 12}])).to.be.ok();
         });
         it('null 不应该是 Array', function () {
             expect(utils.BaseUtil.isArray(null)).to.not.be.ok();
@@ -127,7 +130,7 @@ describe('测试 BaseUtil 工具类', function () {
             expect(utils.BaseUtil.isDate(new Date())).to.be.ok();
         });
         it('"2018-01-01" 不应该是 Date', function () {
-            expect(utils.BaseUtil.isDate("2018-01-01")).to.not.be.ok();
+            expect(utils.BaseUtil.isDate('2018-01-01')).to.not.be.ok();
         });
         it('null 不应该是 Date', function () {
             expect(utils.BaseUtil.isDate(null)).to.not.be.ok();

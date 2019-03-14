@@ -126,6 +126,7 @@ function formatDateToFriendly(date: Date | number = new Date()): string {
 /**
  * 获取日期对应的时间戳(默认为当前时间)，支持日期格式字符串
  * @param {Date | string} date 日期
+ * @param format
  * @returns {Number} 时间戳(单位:毫秒)
  */
 function timestamp(date: Date | string = new Date(), format: string = 'yyyy-MM-dd'): number {
