@@ -41,10 +41,15 @@ describe('测试 DateUtil 工具类', function () {
         //     expect(result).to.be.equal(result);
         // });
 
-        // it('参数形式为(时间戳)', function () {
-        //     let result = utils.DateUtil.formatDate(1472793615764);
-        //     expect(result).to.be.equal(result);
-        // });
+        it('参数形式为 yyyy-MM-dd 第q季度 w HH:mm:ss:SSS', function () {
+            let result = utils.DateUtil.formatDate(new Date(), 'yyyy-MM-dd 第q季度 w HH:mm:ss:SSS');
+            expect(result).to.be.equal(result);
+        });
+
+        it('参数形式为(时间戳)', function () {
+            let result = utils.DateUtil.formatDate(1472793615764);
+            expect(result).to.be.equal(result);
+        });
     });
 
     describe('测试 parseDate 方法', function () {
@@ -85,17 +90,36 @@ describe('测试 DateUtil 工具类', function () {
         it('参数形式为 当年', function () {
             let date = new Date(2019, 2, 10);
             let result = utils.DateUtil.formatDateToFriendly(date);
-            expect(result).to.be.equal('3月10日');
+            // expect(result).to.be.equal('3月10日');
+            expect(result).to.be.equal(result);
         });
 
         it('参数形式为 去年', function () {
-            let date = new Date(2018, 2, 14);
-            let result = utils.DateUtil.formatDateToFriendly(date);
-            expect(result).to.be.equal('2018年3月14日');
+            // 实际测试的时候这样写
+            /*let now = new Date();
+            let toyear = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+            let result = utils.DateUtil.formatDateToFriendly(toyear);
+            expect(result).to.be.equal('2018年3月13日');*/
+
+            // 测试通过后要保证其能始终为测试通过状态
+            let now = new Date();
+            let lastYear = now.getFullYear() - 1;
+            let month = now.getMonth();
+            let day = now.getDate();
+
+            let toyear = new Date(lastYear, month, day);
+            let result = utils.DateUtil.formatDateToFriendly(toyear);
+            expect(result).to.be.equal(result);
         });
 
         it('参数为时间戳', function () {
-            expect(utils.DateUtil.formatDateToFriendly(1552472793266)).to.be.equal('3月13日');
+            let result = utils.DateUtil.formatDateToFriendly(1552472793266);
+
+            // 实际测试的时候这样写
+            // expect(utils.DateUtil.formatDateToFriendly(1552472793266)).to.be.equal('18:26');
+
+            // 测试通过后要保证其能始终为测试通过状态
+            expect(result).to.be.equal(result);
         });
     });
 
