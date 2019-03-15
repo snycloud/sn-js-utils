@@ -382,7 +382,7 @@ export default {
             return arr[group1];
         });
     },
-
+    
     /**
      * @description 中文校验
      * @param {String} input
