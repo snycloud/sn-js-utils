@@ -97,11 +97,11 @@ describe('测试 StringUtil 工具类', function () {
     //生成指定个数的字符
     describe('测试 repeat 方法', function () {
         it('input为我是测试的字符串 repeatTimes为6时,返回6个input的字符串', function () {
-            expect(utils.StringUtil.repeat('我是测试的字符串','6')).to.be.equal('我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串');
+            expect(utils.StringUtil.repeat('我是测试的字符串', 6)).to.be.equal('我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串');
         });
 
         it('input为我是测试的字符串 repeatTimes为6时,返回3个input的字符串', function () {
-            expect(utils.StringUtil.repeat('我是 测试 的 字符串  ','3')).to.be.equal('我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  ');
+            expect(utils.StringUtil.repeat('我是 测试 的 字符串  ', 3)).to.be.equal('我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  ');
         });
     });
 
@@ -123,7 +123,7 @@ describe('测试 StringUtil 工具类', function () {
         });
 
         it('input为我是 测试 的 字符串 ,size为2,padStr为-- 时,返回为右侧填充后的字符串', function () {
-            expect(utils.StringUtil.rightPad('我是测试的字符串', '2', '--')).to.be.equal('我是测试的字符串----');
+            expect(utils.StringUtil.rightPad('我是测试的字符串', 2, '--')).to.be.equal('我是测试的字符串----');
         });
     });
 
@@ -134,7 +134,7 @@ describe('测试 StringUtil 工具类', function () {
         });
 
         it('input为我是测试的字符串,size为2,padStr位--时,返回为左侧填充后的字符串', function () {
-            expect(utils.StringUtil.leftPad('我是测试的字符串', '2', '--')).to.be.equal('----我是测试的字符串');
+            expect(utils.StringUtil.leftPad('我是测试的字符串', 2, '--')).to.be.equal('----我是测试的字符串');
         });
     });
 
