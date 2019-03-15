@@ -96,4 +96,51 @@ describe('测试 NumberUtil 工具类', function () {
             }
         });
     });
+
+    describe('测试 inRange 方法', function () {
+        it('inRange', function () {
+            expect(utils.NumberUtil.inRange(3, 2, 4)).to.be.ok();
+            expect(utils.NumberUtil.inRange(4, 8)).to.be.ok();
+            expect(utils.NumberUtil.inRange(4, 2)).to.not.be.ok();
+            expect(utils.NumberUtil.inRange(2, 2)).to.not.be.ok();
+            expect(utils.NumberUtil.inRange(1.2, 2)).to.be.ok();
+            expect(utils.NumberUtil.inRange(5.2, 4)).to.not.be.ok();
+            expect(utils.NumberUtil.inRange(-3, -2, -6)).to.be.ok();
+            expect(utils.NumberUtil.inRange(NaN, -Infinity, Infinity)).to.not.be.ok();
+        });
+    });
+
+    describe('测试 random 方法', function () {
+        it('随机整数', function () {
+            for (let i = 0; i < 1000; i++) {
+                let actual = utils.NumberUtil.random(0, 10);
+                expect(actual).to.be.equal(Math.floor(actual));
+                expect(actual).within(0, 10);
+            }
+        });
+        it('随机小数', function () {
+            for (let i = 0; i < 1000; i++) {
+                let actual = utils.NumberUtil.random(0, 10, 2);
+                expect(actual).within(0, 10);
+            }
+        });
+        it('不传参数: 0到1随机小数', function () {
+            for (let i = 0; i < 1000; i++) {
+                let actual = utils.NumberUtil.random();
+                expect(actual).within(0, 1);
+            }
+        });
+        it('只有一个参数: 另一个边界为0', function () {
+            for (let i = 0; i < 1000; i++) {
+                let actual = utils.NumberUtil.random(4);
+                expect(actual).within(0, 4);
+            }
+        });
+        it('下边界大于上边界', function () {
+            for (let i = 0; i < 1000; i++) {
+                let actual = utils.NumberUtil.random(4, -2);
+                expect(actual).within(-2, 4);
+            }
+        });
+    });
 });
