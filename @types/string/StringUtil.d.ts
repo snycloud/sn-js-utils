@@ -232,6 +232,8 @@ declare const _default: {
      */
     isChinese: (input: any) => boolean;
     /**
+     *
+     *
      * @description 去掉中文字符
      * @param {String} input
      * @param {string} 去掉中文字符后的字符串
