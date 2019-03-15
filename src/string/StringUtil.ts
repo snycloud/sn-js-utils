@@ -14,19 +14,6 @@ export default {
      * @return {boolean} 是/否
      */
     isEmpty: (input) => {
-       /* const str = 'a2dfcfar1bzvb2';
-        const str1 = 'a2dfcfar1bzvb1';
-        console.log('index : ', str.indexOf('a'));
-        console.log('last index : ', str.length);
-        console.log('last index : ', str.lastIndexOf('a'));
-        console.log('last index : ', str.length);
-        console.log('last index : ', str1.length);
-        console.log('last index : ', str.lastIndexOf('2'));
-        console.log('last index : ', str1.lastIndexOf('2'));
-
-        console.log('是否以2结尾 此时返回是: ', str.lastIndexOf('2') === (str.length - 1));
-        console.log('是否以2结尾 此时返回否: ', str1.lastIndexOf('2') === (str1.length - 1));
-        console.log('last index : ', str.lastIndexOf('a') < 0);*/
         if (input === null || input === '' || /^\s*$/.test(input)) {
             return true;
         } else {
@@ -152,7 +139,6 @@ export default {
         input = input.replace(input[0], input[0].toUpperCase());
         return input;
     },
-
 
     /**
      * @description 首字母转小写
@@ -382,7 +368,7 @@ export default {
             return arr[group1];
         });
     },
-    
+
     /**
      * @description 中文校验
      * @param {String} input
@@ -393,6 +379,8 @@ export default {
     },
 
     /**
+     *
+     *
      * @description 去掉中文字符
      * @param {String} input
      * @param {string} 去掉中文字符后的字符串

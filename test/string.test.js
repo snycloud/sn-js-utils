@@ -118,7 +118,7 @@ describe('测试 StringUtil 工具类', function () {
 
     //右侧填充
     describe('测试 rightPad 方法', function () {
-        it('input,size,padStr都为空时,返回为空', function () {
+        it('input,size,padStr都为空时,返回空', function () {
             expect(utils.StringUtil.rightPad('', '', '')).to.be.equal('');
         });
 
