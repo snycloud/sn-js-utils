@@ -3,7 +3,7 @@ import BaseUtil from '../base/BaseUtil';
 /**
  * 检查手机号是否合法
  * @param {String} phone 手机号
- * 
+ *
  * @example
  *   phoneIsValid(null)
  *   // => false
@@ -16,16 +16,13 @@ function phoneIsValid(phone: string): boolean {
     if (!BaseUtil.isString(phone) || phone.length !== 11) {
         return false;
     }
-    if (/^1[2-9]\d{9}$/.test(phone)) {
-        return true;
-    }
-    return false;
+    return /^1[2-9]\d{9}$/.test(phone);
 }
 
 /**
  * 检查身份证是否合法
  * @param {String} idcard 身份证
- * 
+ *
  * @example
  *   idcardIsValid('110410199001011234')
  *   // => false
@@ -56,7 +53,7 @@ function idcardIsValid(idcard: string): boolean {
  * @param phone 手机号
  * @param start 掩码开始位置，从0开始
  * @param len 掩码长度
- * 
+ *
  * @example
  *   maskPhone('13641601234')
  *   // => '136****1234'
@@ -92,7 +89,7 @@ function maskPhone(phone: string, start: number = 3, len: number = 4): string {
  * @param idcard 身份证
  * @param start 掩码开始位置，从0开始
  * @param len  掩码长度
- * 
+ *
  * @example
  *   maskIDCard('110410199001011234')
  *   // => '110410********1234'
