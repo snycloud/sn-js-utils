@@ -133,7 +133,7 @@ describe('测试 StringUtil 工具类', function () {
             expect(utils.StringUtil.leftPad('', '', '')).to.be.equal('');
         });
 
-        it('input为我是测试的字符串,size为2,padStr位--时,返回为左侧填充后的字符串', function () {
+        it('input为我是测试的字符串,size为2,padStr为--时,返回为左侧填充后的字符串', function () {
             expect(utils.StringUtil.leftPad('我是测试的字符串', 2, '--')).to.be.equal('----我是测试的字符串');
         });
     });
