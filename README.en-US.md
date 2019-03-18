@@ -9,48 +9,20 @@
 
 [简体中文](README.md) | English
 
-The best third party `JS|TS` library scaffold. By forking or cloning the repository, you can complete the basic framework for building a new library.
+The third party `JS|TS` common library
 
-## Characteristics
+### :star: special
+ 
+ -  The third party `JS|TS` common library
 
-- Coded in ES6+ or TypeScript, easily compile and generate production code
-- Integrated babel-runtime (Default set to closed)
-- Third parties rely on automatic injection(Tree shaking)
-- Supports multi environment, including default browsers, Node, AMD, CMD, Webpack, Rollup, Fis and so on.
-- Integrated code style lint(eslint|tslint).
-- Integrated unit test environment(mocha).
-- Integrated test coverage(istanbul).
-- Integrated continuous integration tool [travis-ci](https://www.travis-ci.org/)
-- Supports banner
-- Supports one-key renaming.
-- Supports [sideEffects](https://github.com/webpack/webpack/tree/master/examples/side-effects)
-- Integrated Issue template
-
-**Note:** When `export` and `export default` are not used at the same time, there is the option to 
-turn on `legacy mode`. Under `legacy mode`, the module system can be compatible with `IE6-8`. For more information on legacy mode, 
-please see rollup supplemental file. 
-
-## Compatibility
+## :pill: Compatibility
 Unit tests guarantee support on the following environment:
 
 | IE   | CH   | FF   | SF   | OP   | IOS  | Android   | Node  |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----- |
 | 6+   | 29+ | 55+  | 9+   | 50+  | 9+   | 4+   | 4+ |
 
-> Note: Compiling code depend on ES5, so you need import [es5-shim](http://github.com/es-shims/es5-shim/) to compatible with `IE6-8`, here is a [demo](./demo/demo-global.html)
-
-## Directory
-```
-├── demo - Using demo
-├── dist - Compiler output code
-├── doc - Project documents
-├── src - Source code directory
-├── test - Unit tests
-├── CHANGELOG.md - Change log
-└── TODO.md - Planned features
-```
-
-## Usage Instructions
+## :rocket: Usage Instructions
 
 Using npm, download and install the code. 
 
@@ -84,56 +56,8 @@ For browser environment:
 <script src="node_modules/sn-js-utils/dist/index.aio.js"></script>
 ```
 
-## Documents
+## :bookmark_tabs: Documents
 [API](./doc/api.md)
-
-## Contribution Guide
-
-How to switch `JS` and `TS`
-
-- `srctype` and `scripts` in `package.json`
-- `require` file of `test/test.js`
-- `require` file of `test/browser/index.html`
-
-For the first time to run, you need to install dependencies firstly.
-
-```bash
-$ npm install
-```
-
-To build the project:
-
-```bash
-$ npm run build
-```
-
-To run unit tests:
-
-```bash
-$ npm test
-```
-
-> Note: The browser environment needs to be tested manually under ```test/browser```
-
-Modify the version number in package.json, modify the version number in README.md, modify the CHANGELOG.md, and then release the new version.
-
-```bash
-$ npm run release
-```
-
-Publish the new version to NPM.
-
-```bash
-$ npm publish
-```
-
-For renaming project, you need change `fromName` and `toName` in `rename.js`, then run `npm run rename`, this command will auto renaming names for below files:
-
-- The messages in README.md
-- The messages in package.json
-- The messages in config/rollup.js
-- The repository name in test/browser/index.html
-- Library name in demo/demo-global.html
 
 ## Contributors
 
@@ -142,7 +66,7 @@ For renaming project, you need change `fromName` and `toName` in `rename.js`, th
 ## :gear: Change Log
 [CHANGELOG.md](./CHANGELOG.md)
 
-## TODO
+## :airplane: TODO
 [TODO.md](./TODO.md)
 
 ## :bulb: Current Users
