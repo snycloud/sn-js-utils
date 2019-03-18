@@ -28,7 +28,7 @@ parseDate('2018年11月26日', 'yyyy年MM月dd日') // new Date(2018, 10, 26)
 parseDate('2018年11月26日 11时40分', 'yyyy年MM月dd日 HH时mm分') // new Date(2018, 10, 26, 11, 40)
 ```
 
-* 特殊说明: 如果传入的 date 参数不符合要求的类型，则抛出异常
+> 特殊说明: 如果传入的 date 参数不符合要求的类型，则抛出异常
 
 <br>
 
@@ -56,7 +56,7 @@ formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS'); // 2016-09-02 
 formatDate(1472793615764); // 2016-09-02 13:20:15
 ```
 
-* 特殊说明: 日期不合法时返回字符串 'invalid date'
+> 特殊说明: 日期不合法时返回字符串 'invalid date'
 
 <br>
 <br>
@@ -85,7 +85,7 @@ isEmpty('我是测试的字符串'); // false
 isEmpty(''); // true
 ```
 
-* 特殊说明: [无]
+> 特殊说明: [无]
 
 <br>
 
@@ -110,6 +110,6 @@ isNotEmpty('我是测试的字符串'); // true
 isNotEmpty(''); // false
 ```
 
-* 特殊说明: [无]
+> 特殊说明: [无]
 
 
