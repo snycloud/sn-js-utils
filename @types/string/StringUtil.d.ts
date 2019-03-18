@@ -117,9 +117,9 @@ declare function repeat(ch: string | number, repeatTimes: number): string;
 declare function deleteWhitespace(input: string): string;
 /**
  * 右侧填充
- * @param {string|number} input 输入字符串, 如'我是测试的字符串', 或 输入数字如 220022
+ * @param {string|number} input 输入字符串, 如'我是测试的字符串', 或 输入数字如 '220022'
  * @param {number} size 输入数字,如 2
- * @param {string|number } padStr 输入填充字符, 如 '--' 或 输入数字如 220022
+ * @param {string|number } padStr 输入填充字符, 如 '--' 或 输入数字如 '220022'
  * @returns {string} 右侧填充后的字符串
  *
  * @example
@@ -129,7 +129,7 @@ declare function deleteWhitespace(input: string): string;
 declare function rightPad(input: string | number, size: number, padStr: number | string): string;
 /**
  * 左侧填充
- * @param {string|number} input 输入字符串,如'我是测试的字符串' 或 输入数字如 220022
+ * @param {string|number} input 输入字符串,如'我是测试的字符串' 或 输入数字如 '220022'
  * @param {number} size 输入数字,如 2
  * @param {string|number} padStr 输入填充字符,如 '--'
  * @returns {string} 左侧填充后的字符串

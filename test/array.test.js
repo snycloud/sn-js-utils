@@ -71,4 +71,13 @@ describe('测试 ArrayUtil 工具类', function () {
             expect(actual).to.equal(actual);
         });
     });
+
+    describe('测试 group 方法', function () {
+        it('', function () {
+            let array = [{ a: 1, b: 2, c: 3 }, { a: 2, b: 2, c: 1 }, { b: 3, c: 3 }, { a: 1, c: 1 }];
+            let actual = utils.ArrayUtil.group(array, 'c');
+            expect(actual).to.be.eql(actual);
+        });
+    });
+
 });

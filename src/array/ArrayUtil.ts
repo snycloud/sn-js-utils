@@ -64,7 +64,38 @@ function slice(array: any[], start: number = 0, end: number): any[] {
     return result;
 }
 
+/**
+ * 分组，将对象属性相同的对象分为一组
+ * @param array 对象数组
+ * @param by 对象属性
+ * 
+ * @example
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'a')
+ *   // => [[{a:1, b:2, c:3}, {a:1, b:3}], [{a:2, b:3, c:2}]]
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'b')
+ *   // => [[{a:1, b:2, c:3}], [{a:1, b:3}, {a:2, b:3, c:2}]]
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'c')
+ *   // => [[{a:1, b:2, c:3}], [{a:1, b:3}], [{a:2, b:3, c:2}]]
+ */
+function group(array: any[], by: string): any[] {
+    const result = [];
+    const temp = {};
+    for (const item of array) {
+        const key = by + '_' + item[by];
+        if (key in temp) {
+            temp[key].push(item);
+        } else {
+            temp[key] = [item];
+        }
+    }
+    for (const k of Object.keys(temp)) {
+        result.push(temp[k]);
+    }
+    return result;
+}
+
 export default {
     chunk,
     slice,
+    group,
 };

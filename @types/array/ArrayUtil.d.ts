@@ -29,8 +29,23 @@ declare function chunk(array: any[], size?: number): any[];
  *   // => [2, 3]
  */
 declare function slice(array: any[], start: number, end: number): any[];
+/**
+ * 分组，将对象属性相同的对象分为一组
+ * @param array 对象数组
+ * @param by 对象属性
+ *
+ * @example
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'a')
+ *   // => [[{a:1, b:2, c:3}, {a:1, b:3}], [{a:2, b:3, c:2}]]
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'b')
+ *   // => [[{a:1, b:2, c:3}], [{a:1, b:3}, {a:2, b:3, c:2}]]
+ *   group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'c')
+ *   // => [[{a:1, b:2, c:3}], [{a:1, b:3}], [{a:2, b:3, c:2}]]
+ */
+declare function group(array: any[], by: string): any[];
 declare const _default: {
     chunk: typeof chunk;
     slice: typeof slice;
+    group: typeof group;
 };
 export default _default;
