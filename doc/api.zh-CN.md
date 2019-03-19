@@ -4,6 +4,15 @@
 
 ---
 
+# CommonUtil 常用工具类
+
+[phoneIsValid 检查手机号是否合法](#1-phoneIsValid)  
+[maskPhone 对手机号进行脱敏处理](#2-maskPhone)  
+[idcardIsValid 检查身份证是否合法](#3-idcardIsValid)  
+[maskIDCard 对身份证进行脱敏处理](#4-maskIDCard)  
+
+<br>
+
 # ArrayUtil 数组工具类
 
 [chunk 数组分块](#1-chunk)  
@@ -29,6 +38,137 @@
 [getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
 [getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
 [getDateDiff 计算两个日期的差](#15-getDateDiff)  
+
+<br>
+
+---
+
+### 1. phoneIsValid()
+
+* 方法签名  
+**phoneIsValid(phone: string)**
+
+* 方法详细介绍  
+**检查手机号是否合法**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| phone     | String     | 是 |    无      | 手机号    |
+
+* 返回值
+**true有效/false无效**
+
+* 举个例子
+
+```js
+phoneIsValid(null)
+// => false
+phoneIsValid('123')
+// => false
+phoneIsValid('12345678901')
+// => true
+```
+
+> 特别说明：无
+
+<br>
+
+### 2. maskPhone()
+
+* 方法签名  
+**maskPhone(phone: string, start: number = 3, len: number = 4)**
+
+* 方法详细介绍  
+**对手机号进行去敏处理，用*替换**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| phone     | String     | 是 |    无      | 手机号    |
+| start     | Number     | 否 |    3      | 开始位置，从0开始    |
+| len         | Number     | 否 |    4      | 掩码长度    |
+
+* 返回值  
+**脱敏手机号**
+
+* 举个例子
+
+```js
+maskPhone('13641601234')
+// => '136****1234'
+maskPhone('1234')
+// => '1234'
+maskPhone('13641601234', 3, 8)
+// => '136********'
+```
+
+> 特别说明：无
+
+<br>
+
+### 3. idcardIsValid()
+
+* 方法签名  
+**idcardIsValid(idcard: string)**
+
+* 方法详细介绍  
+**检查身份证是否合法**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| idcard     | String     | 是 |    无      | 身份证号    |
+
+* 返回值 `Boolean`  
+**true有效/false无效**
+
+* 举个例子
+
+```js
+idcardIsValid('110410199001011234')
+// => false
+idcardIsValid('410482199001080000')
+// => true
+```
+
+> 特别说明： 
+> 1. 目前进支持18位的二代身份证
+
+<br>
+
+### 4. maskIDCard()
+
+* 方法签名  
+**maskIDCard(idcard: string, start: number = 6, len: number = 8)**
+
+* 方法详细介绍  
+**对身份证进行去敏处理，用*替换**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| idcard     | String     | 是 |    无      | 身份证    |
+| start     | Number     | 否 |    6      | 开始位置，从0开始    |
+| len         | Number     | 否 |    8      | 掩码长度    |
+
+* 返回值  
+**脱敏身份证**
+
+* 举个例子
+
+```js
+maskIDCard('110410199001011234')
+// => '110410********1234'
+maskIDCard('110410199001011234', 6, 10)
+// => '110410**********34'
+```
+
+> 特别说明：无
 
 <br>
 
