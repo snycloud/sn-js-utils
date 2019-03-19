@@ -34,8 +34,7 @@ declare function inRange(num: number, start: number, end: number): boolean;
  * @example
  *   random(0, 5) => an integer between 0 and 5
  *   random(5)     => also random(0, 5)
- *   random(5, true) => a floating-point number between 0 and 5
- *   random(1.2, 5.2) => a floating-point number between 1.2 and 5.2
+ *   random(1.2, 5.2, 1) => a floating-point number between 1.2 and 5.2
  */
 declare function random(lower: number, upper: number, floating?: number): number;
 declare const _default: {

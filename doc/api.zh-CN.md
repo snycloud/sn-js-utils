@@ -13,6 +13,15 @@
 
 <br>
 
+# NumberUtil 数字工具类
+
+[isInteger 是否为整数](#1-isInteger)  
+[isFloat 是否为小数](#2-isFloat)  
+[inRange 是否在范围内](#3-inRange)  
+[random 随机数](#4-random)  
+
+<br>
+
 # ArrayUtil 数组工具类
 
 [chunk 数组分块](#1-chunk)  
@@ -38,6 +47,135 @@
 [getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
 [getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
 [getDateDiff 计算两个日期的差](#15-getDateDiff)  
+
+<br>
+
+---
+
+### 1. isInteger()
+
+* 方法签名  
+**isInteger(num: number)**
+
+* 方法详细介绍  
+**判断是否为整数**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| num    | Number     | 是 |    无      | 判断对象    |
+
+* 返回值  
+**true是整数/false不是整数**
+
+* 举个例子
+
+```js
+isInteger(0) => true
+isInteger(0.1) => false
+isInteger(Math.PI) => false
+isInteger('10') => false
+isInteger(true) => false
+```
+
+> 特别说明：只有 `num` 是数字并且是整数时，才返回 `true`；其他情况都返回 `false`。
+
+<br>
+
+### 2. isFloat()
+
+* 方法签名  
+**isFloat(num: number)**
+
+* 方法详细介绍  
+**判断是否为小数**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| num    | Number     | 是 |    无      | 判断对象    |
+
+* 返回值  
+**true是小数/false不是小数**
+
+* 举个例子
+
+```js
+isFloat(0) => false
+isFloat(3) => false
+isFloat(0.1) => true
+isFloat(3.3) => true
+isFloat(Math.PI) => true
+// 注:Math.PI 在计算机中是有理数
+```
+
+> 特别说明：`1.0` 被认为是整数，而不是小数
+
+<br>
+
+### 3. inRange()
+
+* 方法签名
+**inRange(num: number, start: number, end: number)**
+
+* 方法详细介绍  
+**检查数字是否在指定区间内**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| num    | Number     | 是 |    无      | 判断对象    |
+| start | Number     | 否 |    0      | 区间的开始    |
+| end     | Number     | 是 |    无      | 区间的结束    |
+
+* 返回值
+**true/false**
+
+* 举个例子
+
+```js
+inRange(3, 2, 4) => true
+inRange(4, 8) => inRange(4, 0, 8) => true
+inRange(5.2, 4) => false
+inRange(-3, -2, -6) => true
+```
+
+> 特别说明：`end` 参数不包含在区间中
+
+<br>
+
+### 4. random()
+
+* 方法签名  
+**random(lower: number, upper: number, floating: number = 0)**
+
+* 方法详细介绍  
+**生成随机数，支持随机整数和随机小数**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| lower        | Number     | 是 |    无      | 下边界，默认0    |
+| upper        | Number     | 是 |    无      | 上边界，默认1    |
+| floating   | Number     | 否 |    0       | 随机小数的位数，默认0    |
+
+* 返回值  
+**随机数**
+
+* 举个例子
+
+```js
+random(0, 5) => an integer between 0 and 5
+random(5)     => also random(0, 5)
+random(1.2, 5.2) => a floating-point number between 1.2 and 5.2
+random(1.2, 5.2, 1) => 返回的随机数只有一位小数
+```
+
+> 特别说明：无
 
 <br>
 
