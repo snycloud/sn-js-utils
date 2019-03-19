@@ -6,53 +6,53 @@
 
 # CommonUtil 常用工具类
 
-[phoneIsValid 检查手机号是否合法](#1-phoneIsValid)  
-[maskPhone 对手机号进行脱敏处理](#2-maskPhone)  
-[idcardIsValid 检查身份证是否合法](#3-idcardIsValid)  
-[maskIDCard 对身份证进行脱敏处理](#4-maskIDCard)  
+[phoneIsValid 检查手机号是否合法](#1-phoneIsValid)<br>
+[maskPhone 对手机号进行脱敏处理](#2-maskPhone)<br>
+[idcardIsValid 检查身份证是否合法](#3-idcardIsValid)<br>
+[maskIDCard 对身份证进行脱敏处理](#4-maskIDCard)<br>
 
 <br>
 
 # NumberUtil 数字工具类
 
-[isInteger 是否为整数](#1-isInteger)  
-[isFloat 是否为小数](#2-isFloat)  
-[inRange 是否在范围内](#3-inRange)  
-[random 随机数](#4-random)  
+[isInteger 是否为整数](#1-isInteger)<br>
+[isFloat 是否为小数](#2-isFloat)<br>
+[inRange 是否在范围内](#3-inRange)<br>
+[random 随机数](#4-random)<br>
 
 <br>
 
 # ArrayUtil 数组工具类
 
-[chunk 数组分块](#1-chunk)  
-[slice 数组切片](#2-slice)  
-[group 对象数组分组](#3-group)  
+[chunk 数组分块](#1-chunk)<br>
+[slice 数组切片](#2-slice)<br>
+[group 对象数组分组](#3-group)<br>
 
 <br>
 
 # DateUtil 日期工具类
 
-[parseDate 将 字符串/时间戳 解析成日期对象](#1-parseDate)  
-[formatDate 将日期格式化成指定格式的字符串](#2-formatDate)  
-[formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)  
-[timestamp 获取时间戳](#4-timestamp)  
-[dateBefore 日期向前偏移](#5-dateBefore)  
-[dateAfter 日期向后偏移](#6-dateAfter)  
-[isLeapYear 判断是否闰年](#7-isLeapYear)  
-[getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)  
-[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)  
-[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)  
-[getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)  
-[getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)  
-[getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
-[getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
-[getDateDiff 计算两个日期的差](#15-getDateDiff)  
+[parseDate 将 字符串/时间戳 解析成日期对象](#1-parseDate)<br>
+[formatDate 将日期格式化成指定格式的字符串](#2-formatDate)<br>
+[formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)<br>
+[timestamp 获取时间戳](#4-timestamp)<br>
+[dateBefore 日期向前偏移](#5-dateBefore)<br>
+[dateAfter 日期向后偏移](#6-dateAfter)<br>
+[isLeapYear 判断是否闰年](#7-isLeapYear)<br>
+[getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)<br>
+[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)<br>
+[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)<br>
+[getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)<br>
+[getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)<br>
+[getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)<br>
+[getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)<br>
+[getDateDiff 计算两个日期的差](#15-getDateDiff)<br>
 
 <br>
 
 # StringUtil 字符串工具类
 
-[isEmpty 判断字符串是否为空](#1-isEmpty)  
+[isEmpty 判断字符串是否为空](#1-isEmpty)<br>
 
 <br>
 
@@ -60,10 +60,10 @@
 
 ### 1. isInteger()
 
-* 方法签名  
+* 方法签名<br>
 **isInteger(num: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **判断是否为整数**
 
 * 参数
@@ -72,17 +72,22 @@
 |:---|:----|:-----:|:------:|:---|
 | num    | Number     | 是 |    无      | 判断对象    |
 
-* 返回值  
+* 返回值<br>
 **true是整数/false不是整数**
 
 * 举个例子
 
 ```js
-isInteger(0) => true
-isInteger(0.1) => false
-isInteger(Math.PI) => false
-isInteger('10') => false
-isInteger(true) => false
+isInteger(0)
+// => true
+isInteger(0.1)
+// => false
+isInteger(Math.PI)
+// => false
+isInteger('10')
+// => false
+isInteger(true)
+// => false
 ```
 
 > 特别说明：只有 `num` 是数字并且是整数时，才返回 `true`；其他情况都返回 `false`。
@@ -91,10 +96,10 @@ isInteger(true) => false
 
 ### 2. isFloat()
 
-* 方法签名  
+* 方法签名<br>
 **isFloat(num: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **判断是否为小数**
 
 * 参数
@@ -103,17 +108,22 @@ isInteger(true) => false
 |:---|:----|:-----:|:------:|:---|
 | num    | Number     | 是 |    无      | 判断对象    |
 
-* 返回值  
+* 返回值<br>
 **true是小数/false不是小数**
 
 * 举个例子
 
 ```js
-isFloat(0) => false
-isFloat(3) => false
-isFloat(0.1) => true
-isFloat(3.3) => true
-isFloat(Math.PI) => true
+isFloat(0)
+// => false
+isFloat(3)
+// => false
+isFloat(0.1)
+// => true
+isFloat(3.3)
+// => true
+isFloat(Math.PI)
+// => true
 // 注:Math.PI 在计算机中是有理数
 ```
 
@@ -123,10 +133,10 @@ isFloat(Math.PI) => true
 
 ### 3. inRange()
 
-* 方法签名
+* 方法签名<br>
 **inRange(num: number, start: number, end: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **检查数字是否在指定区间内**
 
 * 参数
@@ -137,16 +147,20 @@ isFloat(Math.PI) => true
 | start | Number     | 否 |    0      | 区间的开始    |
 | end     | Number     | 是 |    无      | 区间的结束    |
 
-* 返回值
+* 返回值<br>
 **true/false**
 
 * 举个例子
 
 ```js
-inRange(3, 2, 4) => true
-inRange(4, 8) => inRange(4, 0, 8) => true
-inRange(5.2, 4) => false
-inRange(-3, -2, -6) => true
+inRange(3, 2, 4)
+// => true
+inRange(4, 8)
+// => inRange(4, 0, 8) => true
+inRange(5.2, 4)
+// => false
+inRange(-3, -2, -6)
+// => true
 ```
 
 > 特别说明：`end` 参数不包含在区间中
@@ -155,10 +169,10 @@ inRange(-3, -2, -6) => true
 
 ### 4. random()
 
-* 方法签名  
+* 方法签名<br>
 **random(lower: number, upper: number, floating: number = 0)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **生成随机数，支持随机整数和随机小数**
 
 * 参数
@@ -169,16 +183,20 @@ inRange(-3, -2, -6) => true
 | upper        | Number     | 是 |    无      | 上边界，默认1    |
 | floating   | Number     | 否 |    0       | 随机小数的位数，默认0    |
 
-* 返回值  
+* 返回值<br>
 **随机数**
 
 * 举个例子
 
 ```js
-random(0, 5) => an integer between 0 and 5
-random(5)     => also random(0, 5)
-random(1.2, 5.2) => a floating-point number between 1.2 and 5.2
-random(1.2, 5.2, 1) => 返回的随机数只有一位小数
+random(0, 5)
+// => an integer between 0 and 5
+random(5)
+// => also random(0, 5)
+random(1.2, 5.2)
+// => a floating-point number between 1.2 and 5.2
+random(1.2, 5.2, 1)
+// => 返回的随机数只有一位小数
 ```
 
 > 特别说明：无
@@ -189,10 +207,10 @@ random(1.2, 5.2, 1) => 返回的随机数只有一位小数
 
 ### 1. phoneIsValid()
 
-* 方法签名  
+* 方法签名<br>
 **phoneIsValid(phone: string)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **检查手机号是否合法**
 
 * 参数
@@ -201,7 +219,7 @@ random(1.2, 5.2, 1) => 返回的随机数只有一位小数
 |:---|:----|:-----:|:------:|:---|
 | phone     | String     | 是 |    无      | 手机号    |
 
-* 返回值
+* 返回值<br>
 **true有效/false无效**
 
 * 举个例子
@@ -221,10 +239,10 @@ phoneIsValid('12345678901')
 
 ### 2. maskPhone()
 
-* 方法签名  
+* 方法签名<br>
 **maskPhone(phone: string, start: number = 3, len: number = 4)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **对手机号进行去敏处理，用*替换**
 
 * 参数
@@ -235,7 +253,7 @@ phoneIsValid('12345678901')
 | start     | Number     | 否 |    3      | 开始位置，从0开始    |
 | len         | Number     | 否 |    4      | 掩码长度    |
 
-* 返回值  
+* 返回值<br>
 **脱敏手机号**
 
 * 举个例子
@@ -255,10 +273,10 @@ maskPhone('13641601234', 3, 8)
 
 ### 3. idcardIsValid()
 
-* 方法签名  
+* 方法签名<br>
 **idcardIsValid(idcard: string)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **检查身份证是否合法**
 
 * 参数
@@ -267,7 +285,7 @@ maskPhone('13641601234', 3, 8)
 |:---|:----|:-----:|:------:|:---|
 | idcard     | String     | 是 |    无      | 身份证号    |
 
-* 返回值 `Boolean`  
+* 返回值 `Boolean`<br>
 **true有效/false无效**
 
 * 举个例子
@@ -279,17 +297,16 @@ idcardIsValid('410482199001080000')
 // => true
 ```
 
-> 特别说明： 
-> 1. 目前进支持18位的二代身份证
+> 特别说明： 目前进支持18位的二代身份证
 
 <br>
 
 ### 4. maskIDCard()
 
-* 方法签名  
+* 方法签名<br>
 **maskIDCard(idcard: string, start: number = 6, len: number = 8)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **对身份证进行去敏处理，用*替换**
 
 * 参数
@@ -300,7 +317,7 @@ idcardIsValid('410482199001080000')
 | start     | Number     | 否 |    6      | 开始位置，从0开始    |
 | len         | Number     | 否 |    8      | 掩码长度    |
 
-* 返回值  
+* 返回值<br>
 **脱敏身份证**
 
 * 举个例子
@@ -320,10 +337,10 @@ maskIDCard('110410199001011234', 6, 10)
 
 ### 1. chunk()
 
-* 方法签名  
+* 方法签名<br>
 **chunk(array: any[], size: number = 1)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **对目标数组进行分块，每块size个元素**
 
 * 参数
@@ -333,7 +350,7 @@ maskIDCard('110410199001011234', 6, 10)
 | array     | Array     | 是 |    无      | 数组    |
 | size       | Number   | 否 |     1      | 块大小 |
 
-* 返回值  
+* 返回值<br>
 **分块之后的数组**
 
 * 举个例子
@@ -351,10 +368,10 @@ chunk(['a', 'b', 'c', 'd'], 3)
 
 ### 2. slice()
 
-* 方法签名  
+* 方法签名<br>
 **slice(array: any[], start: number = 0, end: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **数组切片**
 
 * 参数
@@ -365,7 +382,7 @@ chunk(['a', 'b', 'c', 'd'], 3)
 | start       | Number   | 否 |     0      | 开始    |
 | end          | Number   | 否 |     0      | 结束     |
 
-* 返回值  
+* 返回值<br>
 **切片**
 
 * 举个例子
@@ -389,10 +406,10 @@ slice([1, 2, 3, 4], -3, -1)
 
 ### 3. group()
 
-* 方法签名  
+* 方法签名<br>
 **group(array: any[], by: string)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **分组，将对象属性相同的对象分为一组**
 
 * 参数
@@ -402,7 +419,7 @@ slice([1, 2, 3, 4], -3, -1)
 | array       | Array     | 是 |    无      | 数组    |
 | by            | String   | 是 |     无      | 属性名    |
 
-* 返回值  
+* 返回值<br>
 **分组之后的数组**
 
 * 举个例子
@@ -424,10 +441,10 @@ group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'c')
 
 ### 1. parseDate()
 
-* 方法签名  
+* 方法签名<br>
 **parseDate(date: Date | string | number, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **将 字符串/时间戳 解析成日期对象**
 
 * 参数
@@ -437,31 +454,36 @@ group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'c')
 | date          | Date, String, Number   | 是 |          无          | 日期字符串，如'2014-09-13'，或者时间戳，如`1546272000000`|
 | format       | String                         | 否  | 'yyyy-MM-dd' | 支持格式：y、M、d、H、m、s、S|
 
-* 返回值 `Date`  
+* 返回值 `Date`<br>
 **解析后的Date对象**
 
 * 举个例子
 
 ```js
-parseDate('2018-11-26'); // new Date(2018, 10, 26)
-parseDate('11/26/2018', 'MM/dd/yyyy') // new Date(2018, 10, 26)
-parseDate('2018-11-26 13:28:43', 'yyyy-MM-dd HH:mm:ss') // new Date(2018, 10, 26, 13, 28, 43)
-parseDate('2018年11月26日', 'yyyy年MM月dd日') // new Date(2018, 10, 26)
-parseDate('2018年11月26日 11时40分', 'yyyy年MM月dd日 HH时mm分') // new Date(2018, 10, 26, 11, 40)
-parseDate(1546272000000) // new Date(2019, 0, 1)
+parseDate('2018-11-26')
+// => new Date(2018, 10, 26)
+parseDate('11/26/2018', 'MM/dd/yyyy')
+// => new Date(2018, 10, 26)
+parseDate('2018-11-26 13:28:43', 'yyyy-MM-dd HH:mm:ss')
+// => new Date(2018, 10, 26, 13, 28, 43)
+parseDate('2018年11月26日', 'yyyy年MM月dd日')
+// => new Date(2018, 10, 26)
+parseDate('2018年11月26日 11时40分', 'yyyy年MM月dd日 HH时mm分')
+// => new Date(2018, 10, 26, 11, 40)
+parseDate(1546272000000)
+// => new Date(2019, 0, 1)
 ```
 
-> 特殊说明:  
-> 如果传入的 date 参数不符合要求的类型，则抛出 `TypeError` 错误
+> 特殊说明：如果传入的 date 参数不符合要求的类型，则抛出 `TypeError` 错误
 
 <br>
 
 ### 2. formatDate()
 
-* 方法签名  
+* 方法签名<br>
 **formatDate(date: Date | number = new Date(), format: string = 'yyyy-MM-dd HH:mm:ss')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **将日期格式化成指定格式的字符串**
 
 * 参数  
@@ -471,29 +493,32 @@ parseDate(1546272000000) // new Date(2019, 0, 1)
 | date     | Date, Number    | 否      |      new Date()     | 要格式化的日期，默认当前时间，也可以是一个时间戳 |
 | format | String              | 否      | 'yyyy-MM-dd HH:mm:ss' | 支持的格式：y,M,d,q,w,H,h,m,S，默认：'yyyy-MM-dd HH:mm:ss' |
 
-* 返回值 `String`  
+* 返回值 `String`<br>
 **格式化后的日期字符串**
 
 * 举个例子
 
 ```js
-formatDate(); // 2016-09-02 13:17:13
-formatDate(new Date(), 'yyyy-MM-dd'); // 2016-09-02
-formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS'); // 2016-09-02 第3季度 星期五 13:19:15:792
-formatDate(1472793615764); // 2016-09-02 13:20:15
+formatDate()
+// => 2016-09-02 13:17:13
+formatDate(new Date(), 'yyyy-MM-dd')
+// => 2016-09-02
+formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS')
+// => 2016-09-02 第3季度 星期五 13:19:15:792
+formatDate(1472793615764)
+// => 2016-09-02 13:20:15
 ```
 
-> 特殊说明:  
-> `date` 参数类型不合法时，返回字符串 'invalid date'
+> 特殊说明:  `date` 参数类型不合法时，返回字符串 'invalid date'
 
 <br>
 
 ### 3. formatDateToFriendly()
 
-* 方法签名  
+* 方法签名
 **formatDateToFriendly(date: Date | number = new Date())**
 
-* 方法详细介绍  
+* 方法详细介绍
 **将一个日期格式化成友好格式，比如，1分钟以内的返回“刚刚”，当天的返回时分，当年的返回月日，否则，返回年月日**
 
 * 参数  
@@ -502,18 +527,23 @@ formatDate(1472793615764); // 2016-09-02 13:20:15
 |:-----|:----|:-----:|:------:| :-------- |
 | date     | Date, Number    | 否      |      new Date()     | 要格式化的日期，默认当前时间，支持时间戳 |
 
-* 返回值 `String`  
+* 返回值 `String`<br>
 **解析后的友好化日期格式**
 
 * 举个例子
 
 ```js
 // 假设当前时间为 2019-03-18 18:00:00
-formatDateToFriendly(); // 刚刚
-formatDateToFriendly(new Date()); // 刚刚
-formatDateToFriendly(new Date(2019,2,18)); // 00:00
-formatDateToFriendly(new Date(2019,1,18)); // 2月18日
-formatDateToFriendly(new Date(2018,1,18)); // 2018年2月18
+formatDateToFriendly()
+// => 刚刚
+formatDateToFriendly(new Date())
+// => 刚刚
+formatDateToFriendly(new Date(2019,2,18))
+// => 00:00
+formatDateToFriendly(new Date(2019,1,18))
+// => 2月18日
+formatDateToFriendly(new Date(2018,1,18))
+// => 2018年2月18
 ```
 
 > 特殊说明: 无
@@ -522,10 +552,10 @@ formatDateToFriendly(new Date(2018,1,18)); // 2018年2月18
 
 ### 4. timestamp()
 
-* 方法签名  
+* 方法签名<br>
 **timestamp(date: Date | string = new Date(), format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取日期对应的时间戳**
 
 * 参数
@@ -535,29 +565,32 @@ formatDateToFriendly(new Date(2018,1,18)); // 2018年2月18
 | date     | Date, String    | 否     |      new Date()     | 日期对象/日期字符串，默认当前时间 |
 | format  | String             | 否     |     'yyyy-MM-dd'  | 字符串模板(date参数为字符串时有效) |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **时间戳(单位:毫秒)**
 
 * 举个例子
 
 ```js
-timestamp() // 获取当前时间的时间戳
-timestamp(new Date(2018, 0, 1)) // 2018年1月1日的时间戳
-timestamp('2018-01-01', 'yyyy-MM-dd') // 2018年1月1日的时间戳
-timestamp([]) // -1
+timestamp()
+// => 获取当前时间的时间戳
+timestamp(new Date(2018, 0, 1))
+// => 2018年1月1日的时间戳
+timestamp('2018-01-01', 'yyyy-MM-dd')
+// => 2018年1月1日的时间戳
+timestamp([])
+// => -1
 ```
 
-> 特殊说明:  
-> 如果date参数不合法，则返回-1
+> 特殊说明:  如果 `date` 参数不合法，则返回-1
 
 <br>
 
 ### 5. dateBefore()
 
-* 方法签名  
+* 方法签名<br>
 **dateBefore(date: Date | string | number, diff: IDateDiff, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **计算指定日期往前偏移指定时间**
 
 * 参数
@@ -568,25 +601,25 @@ timestamp([]) // -1
 | diff     | IDateDiff                     | 是  |     无     | 日期差值，支持year、month、week、day、hour、minute、second、millsecond |
 | format  | String                          | 否  |     'yyyy-MM-dd'  | 字符串模板(date参数为字符串时有效) |
 
-* 返回值 `Date`  
+* 返回值 `Date`<br>
 **偏移后的日期**
 
 * 举个例子
 
 ```js
 dateBefore(new Date(2017, 11, 10), { year: 3 })
-// 结果: new Date(2014, 11, 10)
+// => new Date(2014, 11, 10)
 dateBefore(new Date(2016, 1, 29), { year: 1 })
-// 结果: new Date(2015, 1, 28)
+// => new Date(2015, 1, 28)
 dateBefore(new Date(2016, 2, 31), { month: 1 })
-// 结果: new Date(2016, 1, 29)
+// => new Date(2016, 1, 29)
 dateBefore(new Date(2016, 0, 1), { day: 1 })
-// 结果: new Date(2015, 11, 31)
+// => new Date(2015, 11, 31)
 dateBefore(new Date(2016, 2, 31), { month: 1, day: 1 })
-// 结果: new Date(2016, 1, 29)
+// => new Date(2016, 1, 29)
 // 注意: 这里的结果不是 new Date(2016, 1, 28)，因为先计算 day ，后计算 month
 dateBefore('2016年3月31日', { month: 1, day: 1 }, 'yyyy年M月dd日')
-// 结果: new Date(2016, 1, 29)
+// => new Date(2016, 1, 29)
 ```
 
 > 特殊说明:  
@@ -599,10 +632,10 @@ dateBefore('2016年3月31日', { month: 1, day: 1 }, 'yyyy年M月dd日')
 
 ### 6. dateAfter()
 
-* 方法签名  
+* 方法签名<br>
 **dateAfter(date: Date | string | number, diff: IDateDiff, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍
+* 方法详细介绍<br>
 **计算指定日期往后偏移指定时间**
 
 * 参数  
@@ -613,24 +646,24 @@ dateBefore('2016年3月31日', { month: 1, day: 1 }, 'yyyy年M月dd日')
 | diff     | IDateDiff                     | 是  |     无     | 日期差值，支持year、month、week、day、hour、minute、second、millsecond |
 | format  | String                          | 否  |     'yyyy-MM-dd'  | 字符串模板(date参数为字符串时有效) |
 
-* 返回值 `Date`  
+* 返回值 `Date`<br>
 **偏移后的日期**
 
 * 举个例子
 
 ```js
 dateAfter(new Date(2014, 11, 10), { year: 3 })
-// 结果: new Date(2017, 11, 10)
+// => new Date(2017, 11, 10)
 dateAfter(new Date(2016, 1, 29), { year: 1 })
-// 结果: new Date(2017, 1, 28)
+// => new Date(2017, 1, 28)
 dateAfter(new Date(2016, 2, 31), { month: 1 })
-// 结果: new Date(2016, 3, 30)
+// => new Date(2016, 3, 30)
 dateAfter(new Date(2015, 11, 31), { day: 1 })
-// 结果: new Date(2016, 0, 1)
+// => new Date(2016, 0, 1)
 dateAfter(new Date(2015, 11, 30), { month: 2, day: 1 })
-// 结果: new Date(2016, 1, 29)
+// => new Date(2016, 1, 29)
 dateAfter('2015年12月30日', { month: 2, day: 1 }, 'yyyy年M月dd日')
-// 结果: new Date(2016, 1, 29)
+// => new Date(2016, 1, 29)
 ```
 
 > 特殊说明:  
@@ -643,28 +676,32 @@ dateAfter('2015年12月30日', { month: 2, day: 1 }, 'yyyy年M月dd日')
 
 ### 7. isLeapYear()
 
-* 方法签名  
+* 方法签名<br>
 **isLeapYear(year: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **判断是否为闰年**
 
-* 参数  
+* 参数
 
 | 参数    | 类型 | 是否必传 | 默认值   | 说明       |
 |:-----|:----|:-----:|:------:| :-------- |
 | year     | Number   | 是  |     无     | 4位数的年份 |
 
-* 返回值 `Boolean`  
+* 返回值 `Boolean`<br>
 **是否为闰年**
 
 * 举个例子
 
 ```js
-isLeapYear(1900) => false
-isLeapYear(2000) => true
-isLeapYear(2001) => false
-isLeapYear(2004) => true
+isLeapYear(1900)
+// => false
+isLeapYear(2000)
+// => true
+isLeapYear(2001)
+// => false
+isLeapYear(2004)
+// => true
 ```
 
 > 特殊说明: 无
@@ -673,10 +710,10 @@ isLeapYear(2004) => true
 
 ### 8. getDaysInMonth()
 
-* 方法签名  
+* 方法签名<br>
 **getDaysInMonth(year: number, month: number)**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **计算在给定的年份中，给定的月份有多少天(会自动判断是否为闰年)**
 
 * 参数
@@ -686,15 +723,18 @@ isLeapYear(2004) => true
 | year     | Number   | 是  |     无     | 4位数的年份 |
 | month   | Number   | 是  |     无     | 月份(0-11) |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **当月的天数**
 
 * 举个例子
 
 ```js
-getDaysInMonth(2019, 2) => 31
-getDaysInMonth(2019, 1) => 28
-getDaysInMonth(2016, 1) => 29
+getDaysInMonth(2019, 2)
+// => 31
+getDaysInMonth(2019, 1)
+// => 28
+getDaysInMonth(2016, 1)
+// => 29
 ```
 
 > 特殊说明： 月份从0开始
@@ -703,10 +743,10 @@ getDaysInMonth(2016, 1) => 29
 
 ### 9. getDateStart()
 
-* 方法签名  
+* 方法签名<br>
 **getDateStart(date: Date | string | number, mode: TimeDimension, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取日期指定时间维度的开始**
 
 * 参数
@@ -717,18 +757,18 @@ getDaysInMonth(2016, 1) => 29
 | mode     | TimeDimension              | 是  |     无     | 时间维度，可以使用 `0:Year` `1:Month` `2:Week` `3:Day` `4:Hour` `5:Minute` `6:Second` |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Date`  
+* 返回值 `Date`<br>
 **开始日期**
 
 * 举个例子
 
 ```js
 getDateStart(new Date(2018, 2, 3), 0) 
-// new Date(2018, 0, 1) 年初
+// => new Date(2018, 0, 1) 年初
 getDateStart(new Date(2018, 2, 3), 1) 
-// new Date(2018, 2, 1) 月初
+// => new Date(2018, 2, 1) 月初
 getDateStart(new Date(2018, 2, 3, 10, 20), 3) 
-// new Date(2018, 2, 3) 当天凌晨
+// => new Date(2018, 2, 3) 当天凌晨
 ```
 
 > 特殊说明：无
@@ -737,10 +777,10 @@ getDateStart(new Date(2018, 2, 3, 10, 20), 3)
 
 ### 10. getDateEnd()
 
-* 方法签名  
+* 方法签名<br>
 **getDateEnd(date: Date | string | number, mode: TimeDimension, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取日期指定时间维度的结尾**
 
 * 参数
@@ -751,18 +791,18 @@ getDateStart(new Date(2018, 2, 3, 10, 20), 3)
 | mode     | TimeDimension              | 是  |     无     | 时间维度，可以使用 `Year` `Month` `Day` `Week` `Hour` `Minute` `Second` |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Date`  
+* 返回值 `Date`<br>
 **结尾日期**
 
 * 举个例子
 
 ```js
 getDateEnd(new Date(2018, 2, 3), 0) 
-// new Date(2018, 11, 31, 23, 59, 59, 999) 年末
+// => new Date(2018, 11, 31, 23, 59, 59, 999) 年末
 getDateEnd(new Date(2018, 2, 3), 1) 
-// new Date(2018, 2, 31, 23, 59, 59, 999) 月末
+// => new Date(2018, 2, 31, 23, 59, 59, 999) 月末
 getDateEnd(new Date(2018, 2, 3, 10, 20), 3) 
-// new Date(2018, 2, 3, 23, 59, 59, 999) 当天凌晨
+// => new Date(2018, 2, 3, 23, 59, 59, 999) 当天凌晨
 ```
 
 > 特殊说明：无
@@ -771,10 +811,10 @@ getDateEnd(new Date(2018, 2, 3, 10, 20), 3)
 
 ### 11. getDayCountOfYear()
 
-* 方法签名  
+* 方法签名<br>
 **getDayCountOfYear(date: Date | string | number, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取给定日期所在当年总共有多少天**
 
 * 参数
@@ -784,15 +824,18 @@ getDateEnd(new Date(2018, 2, 3, 10, 20), 3)
 | date     | Date, String, Number   | 否  |     new Date()     | 日期对象/日期字符串/时间戳 |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **当年的总天数**
 
 * 举个例子
 
 ```js
-getDayOfYear('2018-11-26') => 365
-getDayOfYear('12/20/2019', 'MM/dd/yyyy') => 365
-getDayOfYear('2020-12-20') => 366
+getDayOfYear('2018-11-26')
+// => 365
+getDayOfYear('12/20/2019', 'MM/dd/yyyy')
+// => 365
+getDayOfYear('2020-12-20')
+// => 366
 ```
 
 > 特殊说明：无
@@ -801,10 +844,10 @@ getDayOfYear('2020-12-20') => 366
 
 ### 12. getDayIndexOfYear()
 
-* 方法签名  
+* 方法签名<br>
 **getDayIndexOfYear(date: Date | string | number, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取给定日期在当年的第几天**
 
 * 参数
@@ -814,14 +857,16 @@ getDayOfYear('2020-12-20') => 366
 | date     | Date, String, Number   | 否  |     new Date()     | 日期对象/日期字符串/时间戳 |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **日期在当年的第几天**
 
 * 举个例子
 
 ```js
-getDayIndexOfYear('2017-01-20') => 20
-getDayIndexOfYear('2018-05-20') => 140
+getDayIndexOfYear('2017-01-20')
+// => 20
+getDayIndexOfYear('2018-05-20')
+// => 140
 ```
 
 > 特别说明：无
@@ -830,10 +875,10 @@ getDayIndexOfYear('2018-05-20') => 140
 
 ### 13. getWeekIndexOfYear()
 
-* 方法签名  
+* 方法签名<br>
 **getWeekIndexOfYear(date: Date | string | number, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取给定日期在当年的第几周**
 
 * 参数
@@ -843,14 +888,16 @@ getDayIndexOfYear('2018-05-20') => 140
 | date     | Date, String, Number   | 否  |     new Date()     | 日期对象/日期字符串/时间戳 |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **日期在当年的第几周**
 
 * 举个例子
 
 ```js
-getWeekIndexOfYear('2017-01-20') => 3
-getWeekIndexOfYear('2018-05-20') => 20
+getWeekIndexOfYear('2017-01-20')
+// => 3
+getWeekIndexOfYear('2018-05-20')
+// => 20
 ```
 
 > 特别说明：无
@@ -859,10 +906,10 @@ getWeekIndexOfYear('2018-05-20') => 20
 
 ### 14. getWeekIndexOfMonth()
 
-* 方法签名  
+* 方法签名<br>
 **getWeekIndexOfMonth(date: Date | string | number, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **获取给定日期在当月的第几周**
 
 * 参数
@@ -872,14 +919,16 @@ getWeekIndexOfYear('2018-05-20') => 20
 | date     | Date, String, Number   | 否  |     new Date()     | 日期对象/日期字符串/时间戳 |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
-* 返回值 `Number`  
+* 返回值 `Number`<br>
 **日期在当月的第几周**
 
 * 举个例子
 
 ```js
-getWeekIndexOfMonth('2017-01-20') => 3
-getWeekIndexOfMonth('2018-05-20') => 2
+getWeekIndexOfMonth('2017-01-20')
+// => 3
+getWeekIndexOfMonth('2018-05-20')
+// => 2
 ```
 
 > 特别说明：无
@@ -888,10 +937,10 @@ getWeekIndexOfMonth('2018-05-20') => 2
 
 ### 15. getDateDiff()
 
-* 方法签名  
+* 方法签名<br>
 **getDateDiff(date1: Date | string | number, date2: Date | string | number, format1: string = 'yyyy-MM-dd', format2: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍  
+* 方法详细介绍<br>
 **计算两个日期的差**
 
 * 参数
@@ -903,21 +952,21 @@ getWeekIndexOfMonth('2018-05-20') => 2
 | format1  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date1`参数为字符串时有效 |
 | format2  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date2`参数为字符串时有效 |
 
-* 返回值 `ITimeSpan`  
+* 返回值 `ITimeSpan`<br>
 **日期的差值对象**
 
 * 举个例子
 
 ```js
 getDateDiff('2019-01-01', '2019-01-02')
-// { Day: 1, Hour: 0, Minute: 0, Second: 0, Millsecond: 0 }
+// => { Day: 1, Hour: 0, Minute: 0, Second: 0, Millsecond: 0 }
 getDateDiff('20190101', '2019-01-02 03:00:30', 'yyyyMMdd', 'yyyy-MM-dd HH:mm:ss')
-// { Day: 1, Hour: 3, Minute: 0, Second: 30, Millsecond: 0 }
+// => { Day: 1, Hour: 3, Minute: 0, Second: 30, Millsecond: 0 }
 getDateDiff(new Date(2019, 0, 1), '2019-01-02 03:00:30', 'yyyy-MM-dd HH:mm:ss')
-// { Day: 1, Hour: 3, Minute: 0, Second: 30, Millsecond: 0 }
+// => { Day: 1, Hour: 3, Minute: 0, Second: 30, Millsecond: 0 }
 ```
 
-> 特别说明： 
+> 特别说明: <br>
 > 1. ITimeSpan是一个对象接口，字段包含 `Day` `Hour` `Minute` `Second` `Millsecond`
 > 2. 当 `date` 和 `date2` 只有一个是字符串时，只需传入一个字符串模板参数
 > 3. date1 小于 date2 时，返回值为正；反之为负。
