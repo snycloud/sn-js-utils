@@ -11,10 +11,10 @@
 [formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)  
 [timestamp 获取时间戳](#4-timestamp)  
 [dateBefore 日期向前偏移](#5-dateBefore)  
-[dataAfter 日期向后偏移](#6-dataAfter)  
+[dateAfter 日期向后偏移](#6-dateAfter)  
 [isLeapYear 判断是否闰年](#7-isLeapYear)  
 [getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)  
-[getDataStart 获取日期指定时间维度的开始](#9-getDataStart)  
+[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)  
 [getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)  
 [getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)  
 [getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)  
@@ -199,7 +199,7 @@ dateBefore('2016年3月31日', { month: 1, day: 1 }, 'yyyy年M月dd日')
 
 <br>
 
-### 6. dataAfter()
+### 6. dateAfter()
 
 * 方法签名  
 **dateAfter(date: Date | string | number, diff: IDateDiff, format: string = 'yyyy-MM-dd')**
@@ -303,7 +303,7 @@ getDaysInMonth(2016, 1) => 29
 
 <br>
 
-### 9. getDataStart()
+### 9. getDateStart()
 
 * 方法签名  
 **getDateStart(date: Date | string | number, mode: TimeDimension, format: string = 'yyyy-MM-dd')**
