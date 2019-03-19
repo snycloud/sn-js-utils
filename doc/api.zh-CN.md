@@ -50,6 +50,12 @@
 
 <br>
 
+# StringUtil 字符串工具类
+
+[isEmpty 判断字符串是否为空](#1-isEmpty)  
+
+<br>
+
 ---
 
 ### 1. isInteger()
