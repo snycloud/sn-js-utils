@@ -12,6 +12,28 @@
 
 <br>
 
+# DateUtil 日期工具类
+
+[parseDate 将 字符串/时间戳 解析成日期对象](#1-parseDate)  
+[formatDate 将日期格式化成指定格式的字符串](#2-formatDate)  
+[formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)  
+[timestamp 获取时间戳](#4-timestamp)  
+[dateBefore 日期向前偏移](#5-dateBefore)  
+[dateAfter 日期向后偏移](#6-dateAfter)  
+[isLeapYear 判断是否闰年](#7-isLeapYear)  
+[getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)  
+[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)  
+[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)  
+[getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)  
+[getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)  
+[getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
+[getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
+[getDateDiff 计算两个日期的差](#15-getDateDiff)  
+
+<br>
+
+---
+
 ### 1. chunk()
 
 * 方法签名  
@@ -112,27 +134,9 @@ group([{a:1,b:2,c:3}, {a:1,b:3}, {a:2, b:3, c:2}], 'c')
 
 > 特别说明：无
 
----
-
-# DateUtil 日期工具类
-
-[parseDate 将 字符串/时间戳 解析成日期对象](#1-parseDate)  
-[formatDate 将日期格式化成指定格式的字符串](#2-formatDate)  
-[formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)  
-[timestamp 获取时间戳](#4-timestamp)  
-[dateBefore 日期向前偏移](#5-dateBefore)  
-[dateAfter 日期向后偏移](#6-dateAfter)  
-[isLeapYear 判断是否闰年](#7-isLeapYear)  
-[getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)  
-[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)  
-[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)  
-[getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)  
-[getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)  
-[getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
-[getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
-[getDateDiff 计算两个日期的差](#15-getDateDiff)  
-
 <br>
+
+---
 
 ### 1. parseDate()
 
