@@ -64,7 +64,7 @@ describe('测试 StringUtil 工具类', function () {
     // 判断两个字符串是否相等
     describe('测试 equals 方法', function () {
         it('input1为我是测试的字符串,input2为我是测试的字符串时,返回true', function () {
-            expect(utils.StringUtil.equals('我是测试的字符串', '我是测试的字符串')).to.be.equal(true);
+            expect(utils.StringUtil.equals(2222, 2222)).to.be.equal(true);
         });
 
         it('input1为我不是测试的字符串,input2为我是测试的字符串时,返回false', function () {
@@ -108,7 +108,7 @@ describe('测试 StringUtil 工具类', function () {
     //去除字符串中的空格
     describe('测试 deleteWhitespace 方法', function () {
         it('input为空时  ,返回为空', function () {
-            expect(utils.StringUtil.deleteWhitespace('')).to.be.equal('');
+            expect(utils.StringUtil.deleteWhitespace('  测试  ')).to.be.equal('测试');
         });
 
         it('input为我是 测试 的 字符串  时,返回为去除空格后的字符串', function () {
