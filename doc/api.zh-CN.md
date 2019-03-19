@@ -52,9 +52,49 @@
 
 # StringUtil 字符串工具类
 
-[isEmpty 判断字符串是否为空](#1-isEmpty)<br>
-
-<br>
+[isEmpty 判断字符串是否为空](#1-isEmpty)<br> 
+[isNotEmpty 判断字符串是否不为空](#2-isNotEmpty)<br> 
+[trim 将字符串去除空格](#3-trim)<br>
+[startsWith 判断字符串是否以某个字符开头](#4-startsWith)<br> 
+[endsWith 判断字符串是否以某个字符结束](#5-endsWith)<br>
+[contains 判断字符串是否包含某个字符](#6-contains)<br>
+[equals 判断两个字符串是否相等](#7-equals)<br> 
+[equalsIgnoreCase 忽略大小写判断两个字符串是否相等](#8-equalsIgnoreCase)<br> 
+[containsWhitespace 判断字符串是否含有空格](#9-containsWhitespace)<br> 
+[repeat 生成指定个数的字符](#10-repeat)<br> 
+[deleteWhitespace 去除字符串中的空格](#11-deleteWhitespace)<br> 
+[rightPad 右侧填充](#12-rightPad)<br> 
+[leftPad 左侧填充](#13-leftPad)<br> 
+[capitalize 首字母转大写](#14-capitalize)<br> 
+[unCapitalize 首字母转小写](#15-unCapitalize)<br> 
+[swapCase 大写转小写，小写转大写](#16-swapCase)<br> 
+[countMatches 统计含有的子字符串的个数](#17-countMatches)<br> 
+[isAlpha 只包含字母](#18-isAlpha)<br> 
+[isAlphaSpace 只包含字母、空格](#19-isAlphaSpace)<br> 
+[isAlphanumeric 只包含字母、数字](#20-isAlphanumeric)<br> 
+[isAlphanumericSpace 只包含字母、数字和空格](#21-isAlphanumericSpace)<br> 
+[isNumeric 数字](#22-isNumeric)<br> 
+[isDecimal 小数](#23-isDecimal)<br> 
+[isNegativeDecimal 负小数](#24-isNegativeDecimal)<br> 
+[isPositiveDecimal 正小数](#25-isPositiveDecimal)<br> 
+[isInteger 整数](#26-isInteger)<br> 
+[isPositiveInteger 正整数](#27-isPositiveInteger)<br> 
+[isNegativeInteger 负整数](#28-isNegativeInteger)<br> 
+[isNumericSpace 只包含数字和空格](#29-isNumericSpace)<br> 
+[isWhitespace 只包含空格](#30-isWhitespace)<br> 
+[isAllLowerCase 只包含小写字母](#31-isAllLowerCase)<br> 
+[isAllUpperCase 只包含大写字母](#32-isAllUpperCase)<br> 
+[defaultIfEmpty 如果字符串为空则使用默认字符串, 否则不变](#33-defaultIfEmpty)<br> 
+[reverse 字符串反转](#34-reverse)<br> 
+[removeSpecialCharacter 删掉特殊字符(英文状态下)](#35-removeSpecialCharacter)<br> 
+[isSpecialCharacterAlphanumeric 只包含特殊字符、数字和字母（不包括空格，若想包括空格，改为[ -~]）](#36-isSpecialCharacterAlphanumeric)<br> 
+[format 消息格式化后的字符串](#37-format)<br> 
+[isChinese 中文校验](#38-isChinese)<br>
+[removeChinese 去掉中文字符](#39-removeChinese)<br> 
+[escapeMetacharacter 转义元字符](#40-escapeMetacharacter)<br> 
+[escapeMetacharacterOfStr 转义字符串中的元字符](#41-escapeMetacharacterOfStr)<br>
+[camelize 连字符转驼峰式](#42-camelize)<br> 
+[hyphenate 驼峰转连字符](#43-hyphenate)<br> 
 
 ---
 
@@ -989,7 +1029,9 @@ getDateDiff(new Date(2019, 0, 1), '2019-01-02 03:00:30', 'yyyy-MM-dd HH:mm:ss')
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
 | input            | String                | 否               |                  | 输入字符串，如'我是测试的字符串'                                   |
-- 返回值 [return] {boolean} 返回判断结果 true/false
+
+* 返回值  
+**[return] {boolean} 返回判断结果 true/false**
 
 * 举个例子
 
@@ -1112,7 +1154,7 @@ endsWith('a2dfcfar1bzvb','b'); // true
 **contains(input: string,searchSeq: string)**
 
 * 函数详细介绍<br>
-**判断字符串是否以某个字符结束**
+**判断字符串是否包含某个字符**
 
 * 参数<br>
 
@@ -1361,7 +1403,7 @@ capitalize('admin'); // 'Admin'
 **unCapitalize(input: string)**
 
 * 函数详细介绍<br>
-**首字母转大写**
+**首字母转小写**
 
 * 参数<br>
 
@@ -1698,32 +1740,6 @@ isPositiveInteger('-22.22'); // false
 **isNegativeInteger(input: string)**
 
 * 函数详细介绍<br>
-**正整数**
-
-* 参数<br>
-
-| 参数             | 类型                  | 是否必传         | 默认值            | 说明                                                         |
-|:-----------     | :-----------          |:----------:     | :------:         | :------------------------------------------------------------ |
-| input           | String                | 是              |                   | 输入数字,如'-220022',                                        |
-- 返回值 [return] {boolean} 返回判断结果 true/false
-
-* 举个例子
-
-```js
-isPositiveInteger('-220022'); // true
-isPositiveInteger('22.22'); // false
- 
-```
-
-> 特殊说明: [无]
-
-<br>
-
-### 29. isNegativeInteger()
-* 方法定义<br>
-**isNegativeInteger(input: string)**
-
-* 函数详细介绍<br>
 **负整数**
 
 * 参数<br>
@@ -1745,7 +1761,7 @@ isPositiveInteger('22.22'); // false
 
 <br>
 
-### 30. isNumericSpace()
+### 29. isNumericSpace()
 * 方法定义<br>
 **isNumericSpace(input: string)**
 
@@ -1771,7 +1787,7 @@ isNumericSpace('22.22'); // false
 
 <br>
 
-### 31. isWhitespace()
+### 30. isWhitespace()
 * 方法定义<br>
 **isWhitespace(input: string)**
 
@@ -1796,7 +1812,7 @@ isWhitespace(' '); // true
 
 <br>
 
-### 32. isAllLowerCase()
+### 31. isAllLowerCase()
 * 方法定义<br>
 **isAllLowerCase(input: string)**
 
@@ -1822,7 +1838,7 @@ isAllLowerCase('isAllLowerCase'); // false
 
 <br>
 
-### 33. isAllUpperCase()
+### 32. isAllUpperCase()
 * 方法定义<br>
 **isAllUpperCase(input: string)**
 
@@ -1848,7 +1864,7 @@ isAllUpperCase('isAllLowerCase'); // false
 
 <br>
 
-### 34. defaultIfEmpty()
+### 33. defaultIfEmpty()
 * 方法定义<br>
 **defaultIfEmpty(input: string, defaultStr: string)**
 
@@ -1875,7 +1891,7 @@ defaultIfEmpty('我是测试的字符串isAllLowerCase', '我是测试的字符�
 
 <br>
 
-### 35. reverse()
+### 34. reverse()
 * 方法定义<br>
 **reverse(input: string)**
 
@@ -1900,7 +1916,7 @@ defaultIfEmpty('', 'abcd'); // 'abcd'
 
 <br>
 
-### 36. removeSpecialCharacter()
+### 35. removeSpecialCharacter()
 * 方法定义<br>
 **removeSpecialCharacter(input: string)**
 
@@ -1925,7 +1941,7 @@ removeSpecialCharacter(''); // ''
 
 <br>
 
-### 37. isSpecialCharacterAlphanumeric()
+### 36. isSpecialCharacterAlphanumeric()
 * 方法定义<br>
 **isSpecialCharacterAlphanumeric(input: string)**
 
@@ -1951,7 +1967,7 @@ isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)'); // false
 
 <br>
 
-### 38. format()
+### 37. format()
 * 方法定义<br>
 **format(message: string, arr: any)**
 
@@ -1978,7 +1994,7 @@ format(''); // ''
 
 <br>
 
-### 39. isChinese()
+### 38. isChinese()
 * 方法定义<br>
 **isChinese(input: string)**
 
@@ -2004,7 +2020,7 @@ isChinese('我是测试的字  abc  符串'); // false
 
 <br>
 
-### 40. removeChinese()
+### 39. removeChinese()
 * 方法定义<br>
 **removeChinese(input: string)**
 
@@ -2029,7 +2045,7 @@ removeChinese('我是测试的字  abc  符串'); // abc
 
 <br>
 
-### 41. escapeMetacharacter()
+### 40. escapeMetacharacter()
 * 方法定义<br>
 **escapeMetacharacter(input: string)**
 
@@ -2055,7 +2071,7 @@ escapeMetacharacter('\n\\?'); // '\n\\?'
 
 <br>
 
-### 42. escapeMetacharacterOfStr()
+### 41. escapeMetacharacterOfStr()
 * 方法定义<br>
 **escapeMetacharacterOfStr(input: string)**
 
@@ -2081,7 +2097,7 @@ escapeMetacharacterOfStr('我是测试的字abc\n符串'); // '我是测试的�
 
 <br>
 
-### 43. camelize()
+### 42. camelize()
 * 方法定义<br>
 **camelize(input: string)**
 
