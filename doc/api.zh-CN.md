@@ -6,6 +6,24 @@
 
 # DateUtil 日期工具类
 
+[parseDate 将 字符串/时间戳 解析成日期对象](#1-parseDate)  
+[formatDate 将日期格式化成指定格式的字符串](#2-formatDate)  
+[formatDateToFriendly 日期格式化成友好格式](#3-formatDateToFriendly)  
+[timestamp 获取时间戳](#4-timestamp)  
+[dateBefore 日期向前偏移](#5-dateBefore)  
+[dataAfter 日期向后偏移](#6-dataAfter)  
+[isLeapYear 判断是否闰年](#7-isLeapYear)  
+[getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)  
+[getDataStart 获取日期指定时间维度的开始](#9-getDataStart)  
+[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)  
+[getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)  
+[getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)  
+[getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)  
+[getWeekIndexOfMonth 获取给定日期在当月的第几周](#14-getWeekIndexOfMonth)  
+[getDateDiff 计算两个日期的差](#15-getDateDiff)  
+
+<br>
+
 ### 1. parseDate()
 
 * 方法签名  
@@ -72,7 +90,7 @@ formatDate(1472793615764); // 2016-09-02 13:20:15
 
 <br>
 
-### 3.formatDateToFriendly()
+### 3. formatDateToFriendly()
 
 * 方法签名  
 **formatDateToFriendly(date: Date | number = new Date())**
@@ -290,7 +308,7 @@ getDaysInMonth(2016, 1) => 29
 * 方法签名  
 **getDateStart(date: Date | string | number, mode: TimeDimension, format: string = 'yyyy-MM-dd')**
 
-* 方法详细介绍
+* 方法详细介绍  
 **获取日期指定时间维度的开始**
 
 * 参数
@@ -504,6 +522,7 @@ getDateDiff(new Date(2019, 0, 1), '2019-01-02 03:00:30', 'yyyy-MM-dd HH:mm:ss')
 > 特别说明： 
 > 1. ITimeSpan是一个对象接口，字段包含 `Day` `Hour` `Minute` `Second` `Millsecond`
 > 2. 当 `date` 和 `date2` 只有一个是字符串时，只需传入一个字符串模板参数
+> 3. date1 小于 date2 时，返回值为正；反之为负。
 
 <br>
 
