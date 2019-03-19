@@ -5,17 +5,17 @@
 /**
  * 将 字符串/时间戳 解析成日期对象
  * @param {Date | String | Number} date 输入的日期字符串，如'2014-09-13',或者时间戳
- * @param {String} format 字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S，不支持w和q
+ * @param {String} format 字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S
  * @returns {Date} 解析后的Date对象
  *
  * @example
  *  parseDate('2018-11-26'); // new Date(2018, 10, 26)
- *  parseDate('26/11/2018', 'MM/dd/yyyy') // new Date(2018, 10, 26)
+ *  parseDate('11/26/2018', 'MM/dd/yyyy') // new Date(2018, 10, 26)
  *  parseDate('2018-11-26 13:28:43', 'yyyy-MM-dd HH:mm:ss') // new Date(2018, 10, 26, 13, 28, 43)
  *  parseDate('2018年11月26日', 'yyyy年MM月dd日') // new Date(2018, 10, 26)
  *  parseDate('2018年11月26日 11时40分', 'yyyy年MM月dd日 HH时mm分') // new Date(2018, 10, 26, 11, 40)
  *
- * @throws 如果传入的 date 参数不符合要求的类型，则抛出异常
+ * @throws 如果传入的 date 参数不符合要求的类型，则抛出 TypeError 错误
  */
 declare function parseDate(date: Date | string | number, format?: string): Date;
 /**
