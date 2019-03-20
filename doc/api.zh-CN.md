@@ -40,8 +40,8 @@
 [dateAfter 日期向后偏移](#6-dateAfter)<br>
 [isLeapYear 判断是否闰年](#7-isLeapYear)<br>
 [getDaysInMonth 给定的月份有多少天](#8-getDaysInMonth)<br>
-[getDateStart 获取日期指定时间维度的开始](#9-getDataStart)<br>
-[getDateEnd 获取日期指定时间维度的开始](#10-getDateEnd)<br>
+[getDateStart 获取日期指定时间维度的开头](#9-getDataStart)<br>
+[getDateEnd 获取日期指定时间维度的结尾](#10-getDateEnd)<br>
 [getDayCountOfYear 获取给定日期所在当年总共有多少天](#11-getDayCountOfYear)<br>
 [getDayIndexOfYear 获取给定日期在当年的第几天](#12-getDayIndexOfYear)<br>
 [getWeekIndexOfYear 获取给定日期在当年的第几周](#13-getWeekIndexOfYear)<br>
@@ -787,7 +787,7 @@ getDaysInMonth(2016, 1)
 **getDateStart(date: Date | string | number, mode: TimeDimension, format: string = 'yyyy-MM-dd')**
 
 * 方法详细介绍<br>
-**获取日期指定时间维度的开始**
+**获取日期指定时间维度的开头**
 
 * 参数
 
@@ -828,7 +828,7 @@ getDateStart(new Date(2018, 2, 3, 10, 20), 3)
 | 参数    | 类型 | 是否必传 | 默认值   | 说明       |
 |:-----|:----|:-----:|:------:| :-------- |
 | date     | Date, String, Number   | 是  |     无     | 日期 |
-| mode     | TimeDimension              | 是  |     无     | 时间维度，可以使用 `Year` `Month` `Day` `Week` `Hour` `Minute` `Second` |
+| mode     | TimeDimension              | 是  |     无     | 时间维度，可以使用 `0:Year` `1:Month` `2:Week` `3:Day` `4:Hour` `5:Minute` `6:Second` |
 | format  | String                          | 否  | 'yyyy-MM-dd'     | 字符串模板，当`date`参数为字符串时有效 |
 
 * 返回值 `Date`<br>
