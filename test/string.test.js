@@ -40,21 +40,21 @@ describe('测试 StringUtil 工具类', function () {
         });
     });
 
-    // 判断字符串是否以某个字符开头
+    // 判断字符串是否以某个字符串开头
     describe('测试 startsWith 方法', function () {
         it('input为a2dfcfar1bzvb2时,a的位置等于0时,返回true', function () {
-            expect(utils.StringUtil.startsWith('a2dfcfar1bzvb2', 'a')).to.be.equal(true);
+            expect(utils.StringUtil.startsWith('a2dfcfar1bzvb2', 'a2')).to.be.equal(true);
         });
     });
 
-    // 判断字符串是否以某个字符结束
+    // 判断字符串是否以某个字符串结束
     describe('测试 endsWith 方法', function () {
         it('input为a2dfcfar1bzvb时,b的位置等于a2dfcfar1bzvb字符串总长度-1时,返回true', function () {
             expect(utils.StringUtil.endsWith('a2dfcfar1bzvb', 'b')).to.be.equal(true);
         });
     });
 
-    // 判断字符串是否包含某个字符
+    // 判断字符串是否包含某个字符串
     describe('测试 contains 方法', function () {
         it('input为a2dfcfar1bzvb2时,a的位置大于等于0时,表示a2dfcfar1bzvb2包含a,返回true', function () {
             expect(utils.StringUtil.contains('a2dfcfar1bzvb2', 'a')).to.be.equal(true);
@@ -96,12 +96,12 @@ describe('测试 StringUtil 工具类', function () {
 
     //按指定数量生成给定字符串字符
     describe('测试 repeat 方法', function () {
-        it('input为我是测试的字符串 repeatTimes为6时,返回6个input的字符串', function () {
-            expect(utils.StringUtil.repeat('我是测试的字符串', 6)).to.be.equal('我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串');
+        it('input为AB 时,repeatTimes为6时,返回6个input的字符串', function () {
+            expect(utils.StringUtil.repeat('AB ', 6)).to.be.equal('AB AB AB AB AB AB ');
         });
 
-        it('input为我是 测试 的 字符串 repeatTimes为3时,返回3个input的字符串', function () {
-            expect(utils.StringUtil.repeat('我是 测试 的 字符串  ', 3)).to.be.equal('我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  ');
+        it('input为C  D时,repeatTimes为3时,返回3个input的字符串', function () {
+            expect(utils.StringUtil.repeat('C  D', 3)).to.be.equal('C  DC  DC  D');
         });
     });
 

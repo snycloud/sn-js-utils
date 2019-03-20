@@ -55,9 +55,9 @@
 [isEmpty 判断字符串是否为空](#1-isEmpty)<br> 
 [isNotEmpty 判断字符串是否不为空](#2-isNotEmpty)<br> 
 [trim 将字符串去除空格](#3-trim)<br>
-[startsWith 判断字符串是否以某个字符开头](#4-startsWith)<br> 
-[endsWith 判断字符串是否以某个字符结束](#5-endsWith)<br>
-[contains 判断字符串是否包含某个字符](#6-contains)<br>
+[startsWith 判断字符串是否以某个字符串开头](#4-startsWith)<br> 
+[endsWith 判断字符串是否以某个字符串结束](#5-endsWith)<br>
+[contains 判断字符串是否包含某个字符串](#6-contains)<br>
 [equals 判断两个字符串是否相等](#7-equals)<br> 
 [equalsIgnoreCase 忽略大小写判断两个字符串是否相等](#8-equalsIgnoreCase)<br> 
 [containsWhitespace 判断字符串是否含有空格](#9-containsWhitespace)<br> 
@@ -1115,7 +1115,7 @@ trim('我是测 试的字符串');
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
 | input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                  |
-| prefix            | String                | 是               |                  | 输入数字，如'a'                                                |
+| prefix            | String                | 是               |                  | 输入数字，如'2a'                                                |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1123,7 +1123,7 @@ trim('我是测 试的字符串');
 * 举个例子
 
 ```js
-startsWith('2a2dfcfar1bzvb2','2'); 
+startsWith('a2dfcfar1bzvb2','a2'); 
 // => true
 startsWith('2a2dfcfar1bzvb2','2a2d'); 
 // => true
@@ -1139,14 +1139,14 @@ startsWith('2a2dfcfar1bzvb2','2a2d');
 **endsWith(input: string,suffix: string)**
 
 * 函数详细介绍<br>
-**判断字符串是否以某个字符结束**
+**判断字符串是否以某个字符串结束**
 
 * 参数
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
 | input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                         |
-| suffix           | String                | 是               |                  | 输入数字，如'b'                                                  |
+| suffix           | String                | 是               |                  | 输入数字，如'vb'                                                  |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1154,7 +1154,7 @@ startsWith('2a2dfcfar1bzvb2','2a2d');
 * 举个例子
 
 ```js
-endsWith('a2dfcfar1bzvb','b'); 
+endsWith('a2dfcfar1bzvb','vb'); 
 // => true
 
 ```
@@ -1168,14 +1168,14 @@ endsWith('a2dfcfar1bzvb','b');
 **contains(input: string,searchSeq: string)**
 
 * 函数详细介绍<br>
-**判断字符串是否包含某个字符**
+**判断字符串是否包含某个字符串**
 
 * 参数
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------      | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
 | input            | String                 | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                      |
-| searchSeq        | String                 | 是               |                  | 输入数字，如'b'                                                       |
+| searchSeq        | String                 | 是               |                  | 输入数字，如'a2'                                                       |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1183,7 +1183,7 @@ endsWith('a2dfcfar1bzvb','b');
 * 举个例子
 
 ```js
-contains('a2dfcfar1bzvb2','a'); 
+contains('a2dfcfar1bzvb2','a2'); 
 // => true
 
 ```
@@ -2085,7 +2085,7 @@ isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)');
 **format(message: string, arr: any)**
 
 * 函数详细介绍<br>
-**消息格式化后的字符串**
+**消息格式化**
 
 * 参数
 
