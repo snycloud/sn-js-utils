@@ -385,11 +385,10 @@ describe('测试 StringUtil 工具类', function () {
     //消息格式化
     describe('测试 format 方法', function () {
         it('input为空,arr为空时,返回为空', function () {
-            expect(utils.StringUtil.format('format', 'for m at ')).to.be.equal('format');
-        });
-
-        it('input为for m at,arr为format时,返回为for m at', function () {
-            expect(utils.StringUtil.format('for m at ', 'format')).to.be.equal('for m at ');
+            expect(utils.StringUtil.format('format', ['123'])).to.be.equal('format');
+            expect(utils.StringUtil.format('format {0}', ['123'])).to.be.equal('format 123');
+            expect(utils.StringUtil.format('format {0} {0}', ['123'])).to.be.equal('format 123 123');
+            expect(utils.StringUtil.format('format {0} {1}', ['123'])).to.be.equal('format 123 undefined');
         });
     });
 

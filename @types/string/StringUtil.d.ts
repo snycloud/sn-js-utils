@@ -35,13 +35,13 @@ declare function trim(input: string): string;
 /**
  * 判断字符串是否以某个字符开头
  * @param {string} input 输入字符串，如' a2dfcfar1bzvb2 '
- * @param {number} prefix 输入字符串，如'a'
+ * @param {string} prefix 输入字符串，如'a'
  * @returns {boolean} 是/否
  *
  * @example
  *  startsWith('a2dfcfar1bzvb2','a'); // true
  */
-declare function startsWith(input: string, prefix: number): boolean;
+declare function startsWith(input: string, prefix: string): boolean;
 /**
  * 判断字符串是否以某个字符结束
  * @param {String} input 输入字符串，如' a2dfcfar1bzvb '
@@ -55,17 +55,17 @@ declare function endsWith(input: string, suffix: string): boolean;
 /**
  * 判断字符串是否包含某个字符
  * @param {String} input 输入字符串，如'a2dfcfar1bzvb2'
- * @param {number} searchSeq 输入字符串，如'b'
+ * @param {string} searchSeq 输入字符串，如'b'
  * @returns {boolean} 是/否
  *
  * @example
- *  contains('a2dfcfar1bzvb2','a'); // true
+ *  contains('2a2dfcfar1bzvb2','2'); // true
  */
-declare function contains(input: string, searchSeq: number): boolean;
+declare function contains(input: string, searchSeq: string): boolean;
 /**
  * 判断两个字符串是否相等
- * @param {string|number} input1 输入字符串，如'我是测试的字符串' 或 输入数字如 '220022'
- * @param {String|number} input2 输入字符串，如'我是测试的字符串' 或 输入数字如 '220022'
+ * @param {string|number} input1 输入字符串，如'我是测试的字符串' 或 输入数字如 220022
+ * @param {String|number} input2 输入字符串，如'我是测试的字符串' 或 输入数字如 220022
  * @returns {boolean} 是/否
  *
  * @example
@@ -95,10 +95,10 @@ declare function equalsIgnoreCase(input1: string, input2: string): boolean;
  */
 declare function containsWhitespace(input: string): boolean;
 /**
- * 生成指定个数的字符
- * @param {string|number} ch 输入字符串,如'我是测试的字符串', 或 输入数字如 '220022'
+ * 按指定数量生成给定字符串字符
+ * @param {string|number} ch 输入字符串,如'我是测试的字符串', 或 输入数字如 220022
  * @param {number} repeatTimes 输入数字,如 '6'
- * @returns {string} 指定个数的字符
+ * @returns {string} 指定数量的给定字符串
  *
  * @example
  *  repeat('我是测试的字符串',6); // '我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串'
@@ -116,31 +116,31 @@ declare function repeat(ch: string | number, repeatTimes: number): string;
  */
 declare function deleteWhitespace(input: string): string;
 /**
- * 右侧填充
- * @param {string|number} input 输入字符串, 如'我是测试的字符串', 或 输入数字如 '220022'
+ * 将给定字符串进行右侧填充
+ * @param {string|number} input 输入字符串, 如'我是测试的字符串', 或 输入数字如 2222
  * @param {number} size 输入数字,如 2
- * @param {string|number } padStr 输入填充字符, 如 '--' 或 输入数字如 '220022'
+ * @param {string|number } padStr 输入填充字符, 如 '--' 或 输入数字如 33
  * @returns {string} 右侧填充后的字符串
  *
  * @example
- *  rightPad('', '', ''); // ''
+ *  rightPad(2222, 1, 33); // '222233'
  *  rightPad('我是测试的字符串', 2, '--'); //'----我是测试的字符串'
  */
 declare function rightPad(input: string | number, size: number, padStr: number | string): string;
 /**
- * 左侧填充
- * @param {string|number} input 输入字符串,如'我是测试的字符串' 或 输入数字如 '220022'
+ * 将给定字符进行左侧填充
+ * @param {string|number} input 输入字符串,如'我是测试的字符串' 或 输入数字如 220022
  * @param {number} size 输入数字,如 2
- * @param {string|number} padStr 输入填充字符,如 '--'
+ * @param {string|number} padStr 输入填充字符,如 '--'输入数字如 220022
  * @returns {string} 左侧填充后的字符串
  *
  * @example
  *  leftPad('我是测试的字符串', 2, '--'); // '----我是测试的字符串'
- *  leftPad(''); //''
+ *  leftPad(2222, 2, 3); //'332222'
  */
 declare function leftPad(input: string | number, size: number, padStr: number | string): string;
 /**
- * 首字母转大写
+ * 将字符串首字母转大写
  * @param {string}  input 输入字符串,如'admin'
  * @returns {string} 首字母转大写后的字符串
  *
@@ -149,37 +149,37 @@ declare function leftPad(input: string | number, size: number, padStr: number | 
  */
 declare function capitalize(input: string): string;
 /**
- * 首字母转小写
+ * 将字符串首字母转小写
  * @param {string}  input 输入字符串,如'Capitalize',
  * @returns {string} 首字母转小写后的字符串
  *
  * @example
- *  unCapitalize('Capitalize'); // 'capitalize'
+ * unCapitalize('Capitalize'); // 'capitalize'
  */
 declare function unCapitalize(input: string): string;
 /**
- * 大写转小写，小写转大写
+ * 将字符串中的字母大写转小写，小写转大写
  * @param {string}  input 输入字符串,如'abcde',
  * @returns {string} 大写转小写，小写转大写后的字符串
  *
  * @example
- *  swapCase('abcde'); // 'ABCDE'
- *  swapCase('ABCDE'); // 'abcde'
+ *  swapCase('aBcde'); // 'AbCDE'
+ *  swapCase('ABCDe'); // 'abcdE'
  */
 declare function swapCase(input: string): string;
 /**
  * 统计含有的子字符串的个数
- * @param {string|number} input 输入字符串,如'abcdeabcdeabcde', 或 输入数字如 220022
+ * @param {string} input 输入字符串,如'abcdeabcdeabcde',
  * @param {string} sub 输入字符串,如'ab',
  * @returns {number} 统计后字符串的个数
  *
  * @example
- *  countMatches('', ''); // 0
- *  countMatches('abcdeabcdeabcde'ab'); // 6
+ *  countMatches('dabddadb', 'da'); // 3
+ *  countMatches('abcdeabcdeabcde','ab'); // 6
  */
 declare function countMatches(input: string, sub: string): number;
 /**
- * 只包含字母
+ * 判断字符串是否为字母
  * @param {string} input 输入字符串,如'abcdeabcdeabcde',
  * @returns  {boolean} 是/否
  *
@@ -189,38 +189,38 @@ declare function countMatches(input: string, sub: string): number;
  */
 declare function isAlpha(input: string): boolean;
 /**
- * 只包含字母、空格
+ * 判断字符串是否为字母、空格
  * @param {string}  input 输入字符串, 如'abcd eabc deab cde',
  * @returns {boolean} 是/否
  *
  * @example
- *  isAlphaSpace('我是测试的 字符串'); // false
+ *  isAlphaSpace(' 测试 '); // false
  *  isAlphaSpace('abcd eabc deab cde'); // true
  */
 declare function isAlphaSpace(input: string): boolean;
 /**
- * 只包含字母、数字
+ * 判断字符串是否为字母、数字
  * @param {string} input 输入字符串,如'22abcdeabcdeabcde22',
  * @returns  {boolean} 是/否
  *
  * @example
- *  isAlphanumeric('我是测试的 字符串'); // false
+ *  isAlphanumeric('abcd串abcd'); // false
  *  isAlphanumeric('22abcdeabcdeabcde22'); // true
  */
 declare function isAlphanumeric(input: string): boolean;
 /**
- * 只包含字母、数字和空格
+ * 判断字符串是否为字母、数字和空格
  * @param {string}  input 输入字符串, 如'22abcde abcde abcde 22',
  * @returns  {boolean} 是/否
  *
  * @example
- *  isAlphanumericSpace('我是测试的 字符串'); // false
+ *  isAlphanumericSpace('我是测试的 222字符串'); // false
  *  isAlphanumericSpace('22abcde abcde abcde 22'); // true
  */
 declare function isAlphanumericSpace(input: string): boolean;
 /**
- * 数字
- * @param {string}  input 输入数字,如220022,
+ *  判断字符串是否为数字
+ * @param {string}  input 输入数字,如'220022',
  * @returns  {boolean} 是/否
  *
  * @example
@@ -229,18 +229,18 @@ declare function isAlphanumericSpace(input: string): boolean;
  */
 declare function isNumeric(input: string): boolean;
 /**
- * 小数
+ *  判断字符串是否为小数
  * @param {string}  input 输入数字,如22.0022,
  * @returns  {boolean} 是/否
  *
  * @example
- *  isDecimal('我是测试的 字符串'); // false
+ *  isDecimal('220022'); // false
  *  isDecimal(22.0022); // true
  */
 declare function isDecimal(input: string): boolean;
 /**
- * 负小数
- * @param {number}  input 输入数字,如-22.0022,
+ *  判断字符串是否为负小数
+ * @param {number}  input 输入数字,如'-22.0022',
  * @returns  {boolean} 是/否
  *
  * @example
@@ -249,8 +249,8 @@ declare function isDecimal(input: string): boolean;
  */
 declare function isNegativeDecimal(input: string): boolean;
 /**
- * 正小数
- * @param {string}  input 输入数字, 如'22.0022',
+ *  判断字符串是否为正小数
+ * @param {string}  input 输入数字, 如 '22.0022',
  * @returns  {boolean} 是/否
  *
  * @example
@@ -259,7 +259,7 @@ declare function isNegativeDecimal(input: string): boolean;
  */
 declare function isPositiveDecimal(input: string): boolean;
 /**
- * 整数
+ *  判断字符串是否为整数
  * @param {string}  input 输入数字,如'-220022',
  * @returns  {boolean} 是/否
  *
@@ -269,7 +269,7 @@ declare function isPositiveDecimal(input: string): boolean;
  */
 declare function isInteger(input: string): boolean;
 /**
- * 正整数
+ *  判断字符串是否为正整数
  * @param {string}  input 输入数字,如'220022',
  * @returns  {boolean} 是/否
  *
@@ -279,7 +279,7 @@ declare function isInteger(input: string): boolean;
  */
 declare function isPositiveInteger(input: string): boolean;
 /**
- * 负整数
+ *  判断字符串是否为负整数
  * @param {string}  input 输入数字,如'-220022',
  * @returns  {boolean} 是/否
  *
@@ -289,26 +289,27 @@ declare function isPositiveInteger(input: string): boolean;
  */
 declare function isNegativeInteger(input: string): boolean;
 /**
- * 只包含数字和空格
- * @param {string}  input 输入字符串, 如'-220022',
+ *  判断字符串是否为数字、空格
+ * @param {string}  input 输入字符串, 如'2 2 0 0 2 2',
  * @returns  {boolean} 是/否
  *
  * @example
- *  isNumericSpace('-220022'); // true
- *  isNumericSpace('22.22'); // false
+ *  isNumericSpace('2 2 0 0 2 2'); // true
+ *  isNumericSpace('2222aa'); // false
  */
 declare function isNumericSpace(input: string): boolean;
 /**
- *  只包含空格
+ *   判断字符串是否为空格
  * @param {string}  input 输入字符串,如' ',
  * @returns  {boolean} 是/否
  *
  * @example
  *  isWhitespace(' '); // true
+ *  isWhitespace('22.22'); //false
  */
 declare function isWhitespace(input: string): boolean;
 /**
- *  只包含小写字母
+ *   判断字符串是否为小写字母
  * @param {string}  input 输入字符串, 如'abcdefg ',
  * @returns  {boolean} 是/否
  *
@@ -318,8 +319,8 @@ declare function isWhitespace(input: string): boolean;
  */
 declare function isAllLowerCase(input: string): boolean;
 /**
- *  只包含大写字母
- * @param {string}  input 输入字符串,如'abcdefg ',
+ *   判断字符串是否为大写字母
+ * @param {string}  input 输入字符串,如'ABCDEFG ',
  * @returns  {boolean} 是/否
  *
  * @example
@@ -345,7 +346,7 @@ declare function defaultIfEmpty(input: string, defaultStr: string): string;
  *
  * @example
  *  reverse('abcd'); // 'dcba'
- *  reverse(''); // ''
+ *  reverse('ABCD'); // 'DCBA'
  */
 declare function reverse(input: string): string;
 /**
@@ -354,31 +355,31 @@ declare function reverse(input: string): string;
  * @returns {string}  删掉特殊字符(英文状态下)后的字符串
  *
  * @example
- *  removeSpecialCharacter(''remove SpecialCharacter$%%^''); // 'remove SpecialCharacter'
- *  removeSpecialCharacter(''); // ''
+ *  removeSpecialCharacter('remove SpecialCharacter$%%^'); // 'remove SpecialCharacter'
+ *  removeSpecialCharacter('removeSpecialCharacter##*'); // 'removeSpecialCharacter'
  */
 declare function removeSpecialCharacter(input: string): string;
 /**
  * 只包含特殊字符、数字和字母（不包括空格，若想包括空格，改为[ -~]）
- * @param {string} input 输入字符串, 如'abcd',
+ * @param {string} input 输入字符串, 如'2222SpecialCharacter$%%^',
  * @returns {boolean} 是/否
  *
  * @example
- *  isSpecialCharacterAlphanumeric('abcd'); // 'dcba'
- *  isSpecialCharacterAlphanumeric(''); // ''
+ *  isSpecialCharacterAlphanumeric('2222SpecialCharacter$%%^'); // true
+ *  isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)'); // false
  */
 declare function isSpecialCharacterAlphanumeric(input: string): boolean;
 /**
  * 消息格式化
- * @param {string}  message  输入字符串,如'for m at ',
- * @param {any}  arr  输入字符串,如'format',
+ * @param {string}  message  字符串模板,如'format {0}',
+ * @param {any[]}  arr  模板数据,如['data'],
  * @returns {string} 消息格式化后的字符串
  *
  * @example
- *  format('for m at ', 'format'); // 'for m at '
- *  format(''); // ''
+ *  format('format {0}', ['123']); // 'format 123'
+ *  format('format {0} {1}', ['123']); // 'format 123 undefined'
  */
-declare function format(message: string, arr: any): string;
+declare function format(message: string, arr: any[]): string;
 /**
  * 中文校验
  * @param {string}  input 输入字符串,如'我是测试的字符串',
@@ -396,15 +397,16 @@ declare function isChinese(input: string): boolean;
  *
  * @example
  *  removeChinese('我是测试的字  abc  符串'); // abc
+ *  removeChinese('测试abcd'); // abc
  */
 declare function removeChinese(input: string): string;
 /**
  * 转义元字符
- * @param {string}  input 输入字符串, 如'''''',
+ * @param {string}  input 输入字符串, 如'\n\\?',
  * @returns {string} 转义后的字符
  *
  * @example
- *  escapeMetacharacter(''''''); // ''''
+ *  escapeMetacharacter('\'\''); // '\'\''
  *  escapeMetacharacter('\n\\?'); // '\n\\?'
  */
 declare function escapeMetacharacter(input: string): string;
@@ -414,28 +416,29 @@ declare function escapeMetacharacter(input: string): string;
  * @returns {string} 转义后的字符串
  *
  * @example
- *  escapeMetacharacter('我是测试的字abc符串'); // '我是测试的字abc符串'
  *  escapeMetacharacterOfStr('\'\''); // '\'\''
+ *  escapeMetacharacterOfStr('我是测试的字abc\n符串'); // '我是测试的字abc\n符串'
  */
 declare function escapeMetacharacterOfStr(input: string): string;
 /**
- * 连字符转驼峰式
+ * 将中划线分隔形式的字符串转换为驼峰式的字符串
  * @param {string}  input  输入字符串,如'last-index-of',
  * @returns {string} 连字符转换成驼峰式后的字符串
  *
  * @example
  *  camelize('last-index-of'); // 'lastIndexOf'
- *  camelize(''); // ''
+ *  camelize('escape-metacharacter-of-str'); // 'escapeMetacharacterOfStr'
  */
 declare function camelize(input: string): string;
 /**
  * 驼峰转连字符
+ * 将驼峰式的字符串转换为中划线分隔形式的字符串
  * @param {string}  input  输入字符串,如'lastIndexOf',
  * @returns {string} 驼峰转连字符后的字符串
  *
  * @example
  *  hyphenate('lastIndexOf'); // 'last-index-of'
- *  hyphenate(''); // ''
+ *  hyphenate('escapeMetacharacterOfStr'); // 'escape-metacharacter-of-str'
  */
 declare function hyphenate(input: string): string;
 declare const _default: {

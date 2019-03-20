@@ -511,15 +511,15 @@ function isSpecialCharacterAlphanumeric(input: string): boolean {
 
 /**
  * 消息格式化
- * @param {string}  message  输入字符串,如'for m at ',
- * @param {any}  arr  输入字符串,如'format',
+ * @param {string}  message  字符串模板,如'format {0}',
+ * @param {any[]}  arr  模板数据,如['data'],
  * @returns {string} 消息格式化后的字符串
  *
  * @example
- *  format('format', 'for m at '); // 'format'
- *  format('for m at ','format'); // 'for m at '
+ *  format('format {0}', ['123']); // 'format 123'
+ *  format('format {0} {1}', ['123']); // 'format 123 undefined'
  */
-function format(message: string, arr: any): string {
+function format(message: string, arr: any[]): string {
     return message.replace(/{(\d+)}/g,
         (matchStr, group1) => {
             return arr[group1];

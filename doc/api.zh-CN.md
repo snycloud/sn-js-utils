@@ -1108,7 +1108,7 @@ trim('我是测 试的字符串');
 **startsWith(input: string,prefix: string)**
 
 * 函数详细介绍<br>
-**判断字符串是否以某个字符开头**
+**判断字符串是否以某个字符串开头**
 
 * 参数
 
@@ -1124,6 +1124,8 @@ trim('我是测 试的字符串');
 
 ```js
 startsWith('2a2dfcfar1bzvb2','2'); 
+// => true
+startsWith('2a2dfcfar1bzvb2','2a2d'); 
 // => true
 
 ```
@@ -1306,6 +1308,11 @@ repeat('我是测试的字符串',6);
 // => '我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串'
 repeat('我是 测试 的 字符串  ',3); 
 // => '我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  '
+
+repeat('*', 3)
+// => '***'
+repeat('ABC', 3)
+// => 'ABCABCABC'
 
 ```
 
@@ -2092,11 +2099,14 @@ isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)');
 * 举个例子 
 
 ```js
-format('for m at ', 'format'); 
-// => 'for m at '
-format('format', 'for m at ');
-// => 'format'
- 
+format('format ', ['123']); 
+// => 'format '
+format('format {0}', ['123']);
+// => 'format 123'
+format('format {0} {0}', ['123']);
+// => 'format 123 123'
+ format('format {0} {1}', ['123']);
+// => 'format 123 undefined'
 ```
 
 > 特殊说明:[无]
