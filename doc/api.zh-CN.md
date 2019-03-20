@@ -1535,9 +1535,9 @@ swapCase('ABCDe');
 
 ```js
 countMatches('dabddadb', 'da'); 
-// => 3
+// => 2
 countMatches('abcdeabcdeabcde','ab'); 
-// => 6
+// => 3
 
 ```
 
