@@ -1040,6 +1040,8 @@ isEmpty('我是测试的字符串')
 // => false
 isEmpty('')
 // => true
+isEmpty(' ')
+// => true
 ```
 
 > 特殊说明: [无]
@@ -1068,6 +1070,9 @@ isNotEmpty('我是测试的字符串');
 // => true
 isNotEmpty('');
 // => false
+isNotEmpty(' ');
+// => false
+
 ```
 
 > 特殊说明: [无]
@@ -1099,7 +1104,7 @@ trim('我是测 试的字符串');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 字符串前,后,中间的空格都可去除
 
 <br>
 
@@ -1114,8 +1119,8 @@ trim('我是测 试的字符串');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                  |
-| prefix            | String                | 是               |                  | 输入数字，如'2a'                                                |
+| input           | String                 | 是               |                  | 输入字符串，如'abcdefg'                                  |
+| prefix          | String                 | 是               |                  | 输入数字，如'ab'                                                |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1123,9 +1128,11 @@ trim('我是测 试的字符串');
 * 举个例子
 
 ```js
-startsWith('a2dfcfar1bzvb2','a2'); 
+startsWith('abcdefg','ab'); 
 // => true
-startsWith('2a2dfcfar1bzvb2','2a2d'); 
+startsWith('abcdefg','b'); 
+// => false
+startsWith('abcdefg','a'); 
 // => true
 
 ```
@@ -1145,8 +1152,8 @@ startsWith('2a2dfcfar1bzvb2','2a2d');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                         |
-| suffix           | String                | 是               |                  | 输入数字，如'vb'                                                  |
+| input            | String                | 是               |                  | 输入字符串，如'abcdefg'                                         |
+| suffix           | String                | 是               |                  | 输入数字，如'fg'                                                  |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1154,7 +1161,11 @@ startsWith('2a2dfcfar1bzvb2','2a2d');
 * 举个例子
 
 ```js
-endsWith('a2dfcfar1bzvb','vb'); 
+endsWith('abcdefg','fg'); 
+// => true
+endsWith('abcdefg','gh'); 
+// => false
+endsWith('abcdefg','g'); 
 // => true
 
 ```
@@ -1174,8 +1185,8 @@ endsWith('a2dfcfar1bzvb','vb');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------      | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                 | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                      |
-| searchSeq        | String                 | 是               |                  | 输入数字，如'a2'                                                       |
+| input            | String                 | 是               |                  | 输入字符串，如'abcdefg'                                      |
+| searchSeq        | String                 | 是               |                  | 输入数字，如'abc'                                                       |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1183,7 +1194,11 @@ endsWith('a2dfcfar1bzvb','vb');
 * 举个例子
 
 ```js
-contains('a2dfcfar1bzvb2','a2'); 
+contains('abcdefg','abc'); 
+// => true
+contains('abcdefg','gh'); 
+// => false
+contains('abcdefg','a'); 
 // => true
 
 ```
@@ -1212,8 +1227,10 @@ contains('a2dfcfar1bzvb2','a2');
 * 举个例子
 
 ```js
-equals('我是测试的字符串', '我是测试的字符串'); 
+equals(220022,220022); 
 // => true
+equals('我是测试的 字符串  ', '我是测试的字符串'); 
+// => false
 equals('我不是测试的字符串 ', '我是测试的字符串');
 // => false
 
@@ -1277,10 +1294,12 @@ containsWhitespace('我是 测试 的 字符串  ');
 // => true
 containsWhitespace('我是测试的字符串'); 
 // => false
+containsWhitespace('  我是测试的字符串  '); 
+// => true
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 字符串前边,后边,中间的空格都包含在判断范围内
 
 <br>
 
@@ -1304,11 +1323,10 @@ containsWhitespace('我是测试的字符串');
 * 举个例子
 
 ```js
-repeat('我是测试的字符串',6); 
-// => '我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串'
-repeat('我是 测试 的 字符串  ',3); 
-// => '我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  '
-
+repeat('AB ',6); 
+// => 'AB AB AB AB AB AB '
+repeat('C  D',3); 
+// =>'C  DC  DC  D'
 repeat('*', 3)
 // => '***'
 repeat('ABC', 3)
@@ -1545,7 +1563,7 @@ countMatches('abcdeabcdeabcde','ab');
 * 举个例子
 
 ```js
-isAlpha(' 测试 ');
+isAlpha('abce测试');
 // => false
 isAlpha('abcdeabcdeabcde'); 
 // => true
