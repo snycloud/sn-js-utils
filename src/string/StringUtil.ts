@@ -44,7 +44,7 @@ function trim(input: string): string {
 }
 
 /**
- * 判断字符串是否以某个字符开头
+ * 判断字符串是否以某个字符串开头
  * @param {string} input 输入字符串，如' a2dfcfar1bzvb2 '
  * @param {string} prefix 输入字符串，如'a'
  * @returns {boolean} 是/否
@@ -57,7 +57,7 @@ function startsWith(input: string, prefix: string): boolean {
 }
 
 /**
- * 判断字符串是否以某个字符结束
+ * 判断字符串是否以某个字符串结束
  * @param {String} input 输入字符串，如' a2dfcfar1bzvb '
  * @param {string} suffix 输入字符串，如'b'
  * @returns {boolean} 是/否
@@ -70,7 +70,7 @@ function endsWith(input: string, suffix: string): boolean {
 }
 
 /**
- * 判断字符串是否包含某个字符
+ * 判断字符串是否包含某个字符串
  * @param {String} input 输入字符串，如'a2dfcfar1bzvb2'
  * @param {string} searchSeq 输入字符串，如'b'
  * @returns {boolean} 是/否
@@ -131,8 +131,8 @@ function containsWhitespace(input: string): boolean {
  * @returns {string} 指定数量的给定字符串
  *
  * @example
- *  repeat('我是测试的字符串',6); // '我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串'
- *  repeat('我是 测试 的 字符串  ',3); //'我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  '
+ *  repeat('AB ',6); // 'AB AB AB AB AB AB '
+ *  repeat('C  D',3); //'C  DC  DC  D'
  */
 function repeat(ch: string | number, repeatTimes: number): string {
     let result = '';
