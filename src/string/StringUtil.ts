@@ -203,6 +203,7 @@ function leftPad(input: string | number, size: number, padStr: number | string):
  *
  * @example
  *  capitalize('admin'); // 'Admin'
+ *  capitalize('capitalize'); // 'Capitalize'
  */
 function capitalize(input: string): string {
     input = input.replace(input[0], input[0].toUpperCase());
@@ -216,6 +217,7 @@ function capitalize(input: string): string {
  *
  * @example
  * unCapitalize('Capitalize'); // 'capitalize'
+ * unCapitalize('SetTimeout'); // 'setTimeout'
  */
 function unCapitalize(input: string): string {
     input = input.replace(input[0], input[0].toLowerCase());

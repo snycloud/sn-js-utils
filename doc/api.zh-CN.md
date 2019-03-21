@@ -1453,6 +1453,8 @@ leftPad('我是测试的字符串', 2, '--');
 ```js
 capitalize('admin'); 
 // => 'Admin'
+capitalize('capitalize'); 
+// => 'Capitalize'
 
 ```
 
@@ -1480,6 +1482,8 @@ capitalize('admin');
 ```js
 unCapitalize('Capitalize');
 // => 'capitalize'
+unCapitalize('SetTimeout');
+// => 'setTimeout'
 
 ```
 

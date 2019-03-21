@@ -181,12 +181,18 @@ describe('测试 StringUtil 工具类', function () {
         it('input为admin时,返回为首字母转大写后的字符串', function () {
             expect(utils.StringUtil.capitalize('admin')).to.be.equal('Admin');
         });
+        it('input为capitalize时,返回为首字母转大写后的字符串', function () {
+            expect(utils.StringUtil.capitalize('capitalize')).to.be.equal('Capitalize');
+        });
     });
 
     //将字符串首字母转小写
     describe('测试 unCapitalize 方法', function () {
         it('input为Capitalize时,返回为capitalize', function () {
             expect(utils.StringUtil.unCapitalize('Capitalize')).to.be.equal('capitalize');
+        });
+        it('input为Capitalize时,返回为capitalize', function () {
+            expect(utils.StringUtil.unCapitalize('SetTimeout')).to.be.equal('setTimeout');
         });
     });
 
