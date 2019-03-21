@@ -137,6 +137,10 @@ describe('测试 StringUtil 工具类', function () {
         it('input为C  D时,repeatTimes为3时,返回3个input的字符串', function () {
             expect(utils.StringUtil.repeat('C  D', 3)).to.be.equal('C  DC  DC  D');
         });
+
+        it('input为20时,repeatTimes为3时,返回3个input的字符串', function () {
+            expect(utils.StringUtil.repeat('20', 3)).to.be.equal('202020');
+        });
     });
 
     //去除字符串中的空格

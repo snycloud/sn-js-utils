@@ -143,6 +143,7 @@ function containsWhitespace(input: string): boolean {
  * @example
  *  repeat('AB ',6); // 'AB AB AB AB AB AB '
  *  repeat('C  D',3); //'C  DC  DC  D'
+ *  repeat('20', 3); //'202020'
  */
 function repeat(ch: string | number, repeatTimes: number): string {
     let result = '';
