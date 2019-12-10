@@ -32,12 +32,16 @@ function phoneIsValid(phone: string): boolean {
 function idcardIsValid(idcard: string): boolean {
     const weight = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];    // 十七位数字本体码权重
     const validate = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];    // 校验码列表
+    const validChar = ['0','1','2','3','4','5','6','7','8','9','x','X'];
 
     if (!BaseUtil.isString(idcard) || idcard.length !== 18) {
         return false;
     }
 
     const idcardCharArr = idcard.split('');
+    if (idcardCharArr.some(c => !validChar.includes(c))) {
+        return false;
+    }
 
     let sum = 0;
     for (let i = 0; i < 17; i++) {
