@@ -34,6 +34,9 @@ describe('测试 CommonUtil 工具类', function () {
         it('身份证校验失败', function () {
             expect(utils.CommonUtil.idcardIsValid('110410199001011234')).to.not.be.ok();
         });
+        it('身份证校验失败(包含空格)', function () {
+            expect(utils.CommonUtil.idcardIsValid('410482199001 80000')).to.not.be.ok();
+        });
         it('校验成功', function () {
             expect(utils.CommonUtil.idcardIsValid('410482199001080000')).to.be.ok();
         });

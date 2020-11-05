@@ -1038,11 +1038,13 @@ getDateDiff(new Date(2019, 0, 1), '2019-01-02 03:00:30', 'yyyy-MM-dd HH:mm:ss')
 ```js
 isEmpty('我是测试的字符串')
 // => false
+isEmpty('  ')
+// => true
 isEmpty('')
 // => true
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1070,7 +1072,7 @@ isNotEmpty('');
 // => false
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1099,7 +1101,7 @@ trim('我是测 试的字符串');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 字符串前面的、后面的、中间的空格都会被去掉
 
 <br>
 
@@ -1123,14 +1125,15 @@ trim('我是测 试的字符串');
 * 举个例子
 
 ```js
-startsWith('a2dfcfar1bzvb2','a2'); 
+startsWith('abcd','ab'); 
 // => true
-startsWith('2a2dfcfar1bzvb2','2a2d'); 
+startsWith('abcd','a'); 
 // => true
-
+startsWith('abcd','ba'); 
+// => false
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1159,7 +1162,7 @@ endsWith('a2dfcfar1bzvb','vb');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1188,7 +1191,7 @@ contains('a2dfcfar1bzvb2','a2');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1219,7 +1222,7 @@ equals('我不是测试的字符串 ', '我是测试的字符串');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1250,7 +1253,7 @@ equalsIgnoreCase('equals ', 'equalsIgnoreCase');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1280,7 +1283,7 @@ containsWhitespace('我是测试的字符串');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1316,7 +1319,7 @@ repeat('ABC', 3)
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1346,7 +1349,7 @@ deleteWhitespace('  测试  ');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1378,7 +1381,7 @@ rightPad('我是测试的字符串', 2, '--');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1410,7 +1413,7 @@ leftPad('我是测试的字符串', 2, '--');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1438,7 +1441,7 @@ capitalize('admin');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1465,7 +1468,7 @@ unCapitalize('Capitalize');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1493,7 +1496,7 @@ swapCase('ABCDe');
 // => 'abcdE'
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1523,7 +1526,7 @@ countMatches('abcdeabcdeabcde','ab');
 
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1552,7 +1555,7 @@ isAlpha('abcdeabcdeabcde');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1581,7 +1584,7 @@ isAlphaSpace('abcd eabc deab cde');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1610,7 +1613,7 @@ isAlphanumeric('22abcdeabcdeabcde22');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1639,7 +1642,7 @@ isAlphanumericSpace('22abcde abcde abcde 22');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1668,7 +1671,7 @@ isNumeric(220022);
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1697,7 +1700,7 @@ isDecimal('22.0022');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1726,7 +1729,7 @@ isNegativeDecimal('-22.0022');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1755,7 +1758,7 @@ isPositiveDecimal('-22.0022');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1784,7 +1787,7 @@ isInteger('22.0022');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1813,7 +1816,7 @@ isPositiveInteger('-22.22');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1842,7 +1845,7 @@ isPositiveInteger('22.22');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1871,7 +1874,7 @@ isNumericSpace('2222aa');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1900,7 +1903,7 @@ isWhitespace('22.22');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1929,7 +1932,7 @@ isAllLowerCase('isAllLowerCase');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -1958,7 +1961,7 @@ isAllUpperCase('isAllLowerCase');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -2018,7 +2021,7 @@ reverse('ABCD');
  
 ```
 
-> 特殊说明: [无]
+> 特殊说明: 无
 
 <br>
 
@@ -2047,7 +2050,7 @@ removeSpecialCharacter('removeSpecialCharacter##*');
 
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2076,7 +2079,7 @@ isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)');
 
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2109,7 +2112,7 @@ format('format {0} {0}', ['123']);
 // => 'format 123 undefined'
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2138,7 +2141,7 @@ isChinese('我是测试的字  abc  符串');
  
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2167,7 +2170,7 @@ removeChinese('测试abc');
  
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2196,7 +2199,7 @@ escapeMetacharacter('\n\\?');
  
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2225,7 +2228,7 @@ escapeMetacharacterOfStr('我是测试的字abc\n符串');
  
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2255,7 +2258,7 @@ camelize('escape-metacharacter-of-str');
   
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 
@@ -2284,7 +2287,7 @@ hyphenate('escapeMetacharacterOfStr');
  
 ```
 
-> 特殊说明:[无]
+> 特殊说明:无
 
 <br>
 

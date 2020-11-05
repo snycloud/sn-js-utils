@@ -166,11 +166,11 @@ describe('测试 StringUtil 工具类', function () {
     //统计含有的子字符串的个数
     describe('测试 countMatches 方法', function () {
         it('input为空,sub为空时,返回字符串个数为0', function () {
-            expect(utils.StringUtil.countMatches('dabddadb', 'da')).to.be.equal(3);
+            expect(utils.StringUtil.countMatches('dabddadb', 'da')).to.be.equal(2);
         });
 
         it('input为abcdeabcdeabcde时,返回为返回字符串个数为6', function () {
-            expect(utils.StringUtil.countMatches('abcdeabcdeabcde', 'ab')).to.be.equal(6);
+            expect(utils.StringUtil.countMatches('abcdeabcdeabcde', 'ab')).to.be.equal(3);
         });
     });
 

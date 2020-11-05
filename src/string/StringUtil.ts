@@ -237,8 +237,8 @@ function swapCase(input: string): string {
  * @returns {number} 统计后字符串的个数
  *
  * @example
- *  countMatches('dabddadb', 'da'); // 3
- *  countMatches('abcdeabcdeabcde','ab'); // 6
+ *  countMatches('dabddadb', 'da'); // 2
+ *  countMatches('abcdeabcdeabcde','ab'); // 3
  */
 function countMatches(input: string, sub: string): number {
     if (this.isEmpty(input) || this.isEmpty(sub)) {
@@ -246,7 +246,8 @@ function countMatches(input: string, sub: string): number {
     }
     let count = 0;
     let index = 0;
-    while ((input.indexOf(sub, index)) !== -1) {
+    // tslint:disable-next-line
+    while ((index = input.indexOf(sub, index)) !== -1) {
         index += sub.length;
         count++;
     }
