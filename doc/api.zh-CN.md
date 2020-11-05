@@ -1038,13 +1038,13 @@ getDateDiff(new Date(2019, 0, 1), '2019-01-02 03:00:30', 'yyyy-MM-dd HH:mm:ss')
 ```js
 isEmpty('我是测试的字符串')
 // => false
-isEmpty('  ')
-// => true
 isEmpty('')
+// => true
+isEmpty(' ')
 // => true
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1066,13 +1066,16 @@ isEmpty('')
 * 举个例子
 
 ```js
-isNotEmpty('我是测试的字符串'); 
+isNotEmpty('我是测试的字符串');
 // => true
 isNotEmpty('');
 // => false
+isNotEmpty(' ');
+// => false
+
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1101,7 +1104,7 @@ trim('我是测 试的字符串');
 
 ```
 
-> 特殊说明: 字符串前面的、后面的、中间的空格都会被去掉
+> 特殊说明: 字符串前,后,中间的空格都可去除
 
 <br>
 
@@ -1116,8 +1119,8 @@ trim('我是测 试的字符串');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                  |
-| prefix            | String                | 是               |                  | 输入数字，如'2a'                                                |
+| input           | String                 | 是               |                  | 输入字符串，如'abcdefg'                                  |
+| prefix          | String                 | 是               |                  | 输入数字，如'ab'                                                |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1125,15 +1128,16 @@ trim('我是测 试的字符串');
 * 举个例子
 
 ```js
-startsWith('abcd','ab'); 
+startsWith('abcdefg','ab'); 
 // => true
-startsWith('abcd','a'); 
-// => true
-startsWith('abcd','ba'); 
+startsWith('abcdefg','b'); 
 // => false
+startsWith('abcdefg','a'); 
+// => true
+
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1148,8 +1152,8 @@ startsWith('abcd','ba');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                         |
-| suffix           | String                | 是               |                  | 输入数字，如'vb'                                                  |
+| input            | String                | 是               |                  | 输入字符串，如'abcdefg'                                         |
+| suffix           | String                | 是               |                  | 输入数字，如'fg'                                                  |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1157,12 +1161,16 @@ startsWith('abcd','ba');
 * 举个例子
 
 ```js
-endsWith('a2dfcfar1bzvb','vb'); 
+endsWith('abcdefg','fg'); 
+// => true
+endsWith('abcdefg','gh'); 
+// => false
+endsWith('abcdefg','g'); 
 // => true
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1177,8 +1185,8 @@ endsWith('a2dfcfar1bzvb','vb');
 
 | 参数             | 类型                    | 是否必传         | 默认值            | 说明                                                         |
 |:-----------      | :-----------           |:----------:      | :------:         | :------------------------------------------------------------ |
-| input            | String                 | 是               |                  | 输入字符串，如'a2dfcfar1bzvb2'                                      |
-| searchSeq        | String                 | 是               |                  | 输入数字，如'a2'                                                       |
+| input            | String                 | 是               |                  | 输入字符串，如'abcdefg'                                      |
+| searchSeq        | String                 | 是               |                  | 输入数字，如'abc'                                                       |
 
 * 返回值 `boolean`<br>
  **返回判断结果 true/false**
@@ -1186,12 +1194,16 @@ endsWith('a2dfcfar1bzvb','vb');
 * 举个例子
 
 ```js
-contains('a2dfcfar1bzvb2','a2'); 
+contains('abcdefg','abc'); 
+// => true
+contains('abcdefg','gh'); 
+// => false
+contains('abcdefg','a'); 
 // => true
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1206,8 +1218,8 @@ contains('a2dfcfar1bzvb2','a2');
 
 | 参数             | 类型                  | 是否必传         | 默认值            | 说明                                                         |
 |:-----------     | :-----------          |:----------:      | :------:         | :------------------------------------------------------------ |
-| input1            | String,number       | 是               |                  | 输入字符串，如'我是测试的字符串' 或 输入数字如 '220022'                      |
-| input2            | String,number       | 是               |                  | 输入字符串，如'我是测试的字符串' 或 输入数字如 '220022'                       |
+| input1            | String,number       | 是               |                  | 输入字符串，如'我是测试的字符串' 或 输入数字如 220022                     |
+| input2            | String,number       | 是               |                  | 输入字符串，如'我是测试的字符串' 或 输入数字如 220022                       |
 
 * 返回值 `boolean`<br>
 **返回判断结果 true/false**
@@ -1215,14 +1227,16 @@ contains('a2dfcfar1bzvb2','a2');
 * 举个例子
 
 ```js
-equals('我是测试的字符串', '我是测试的字符串'); 
+equals(220022,220022); 
 // => true
+equals('我是测试的 字符串  ', '我是测试的字符串'); 
+// => false
 equals('我不是测试的字符串 ', '我是测试的字符串');
 // => false
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1253,7 +1267,7 @@ equalsIgnoreCase('equals ', 'equalsIgnoreCase');
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1280,10 +1294,12 @@ containsWhitespace('我是 测试 的 字符串  ');
 // => true
 containsWhitespace('我是测试的字符串'); 
 // => false
+containsWhitespace('  我是测试的字符串  '); 
+// => true
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: 字符串前边,后边,中间的空格都包含在判断范围内
 
 <br>
 
@@ -1307,11 +1323,10 @@ containsWhitespace('我是测试的字符串');
 * 举个例子
 
 ```js
-repeat('我是测试的字符串',6); 
-// => '我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串我是测试的字符串'
-repeat('我是 测试 的 字符串  ',3); 
-// => '我是 测试 的 字符串  我是 测试 的 字符串  我是 测试 的 字符串  '
-
+repeat('AB ',6); 
+// => 'AB AB AB AB AB AB '
+repeat('C  D',3); 
+// =>'C  DC  DC  D'
 repeat('*', 3)
 // => '***'
 repeat('ABC', 3)
@@ -1319,7 +1334,7 @@ repeat('ABC', 3)
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1349,7 +1364,7 @@ deleteWhitespace('  测试  ');
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1381,7 +1396,7 @@ rightPad('我是测试的字符串', 2, '--');
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1413,7 +1428,7 @@ leftPad('我是测试的字符串', 2, '--');
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1438,10 +1453,12 @@ leftPad('我是测试的字符串', 2, '--');
 ```js
 capitalize('admin'); 
 // => 'Admin'
+capitalize('capitalize'); 
+// => 'Capitalize'
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1465,10 +1482,13 @@ capitalize('admin');
 ```js
 unCapitalize('Capitalize');
 // => 'capitalize'
+unCapitalize('SetTimeout');
+// => 'setTimeout'
+
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1496,7 +1516,7 @@ swapCase('ABCDe');
 // => 'abcdE'
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1520,13 +1540,13 @@ swapCase('ABCDe');
 
 ```js
 countMatches('dabddadb', 'da'); 
-// => 3
+// => 2
 countMatches('abcdeabcdeabcde','ab'); 
-// => 6
+// => 3
 
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1548,14 +1568,14 @@ countMatches('abcdeabcdeabcde','ab');
 * 举个例子
 
 ```js
-isAlpha(' 测试 ');
+isAlpha('abce测试');
 // => false
 isAlpha('abcdeabcdeabcde'); 
 // => true
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1584,7 +1604,7 @@ isAlphaSpace('abcd eabc deab cde');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1613,7 +1633,7 @@ isAlphanumeric('22abcdeabcdeabcde22');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1642,7 +1662,7 @@ isAlphanumericSpace('22abcde abcde abcde 22');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1671,7 +1691,7 @@ isNumeric(220022);
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1700,7 +1720,7 @@ isDecimal('22.0022');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1729,7 +1749,7 @@ isNegativeDecimal('-22.0022');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1758,7 +1778,7 @@ isPositiveDecimal('-22.0022');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1787,7 +1807,7 @@ isInteger('22.0022');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1816,7 +1836,7 @@ isPositiveInteger('-22.22');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1845,7 +1865,7 @@ isPositiveInteger('22.22');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1874,7 +1894,7 @@ isNumericSpace('2222aa');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1903,7 +1923,7 @@ isWhitespace('22.22');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1932,7 +1952,7 @@ isAllLowerCase('isAllLowerCase');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -1961,7 +1981,7 @@ isAllUpperCase('isAllLowerCase');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -2021,7 +2041,7 @@ reverse('ABCD');
  
 ```
 
-> 特殊说明: 无
+> 特殊说明: [无]
 
 <br>
 
@@ -2050,7 +2070,7 @@ removeSpecialCharacter('removeSpecialCharacter##*');
 
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2079,7 +2099,7 @@ isSpecialCharacterAlphanumeric('(字符串2222SpecialCharacter$%%^)');
 
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2112,7 +2132,7 @@ format('format {0} {0}', ['123']);
 // => 'format 123 undefined'
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2141,7 +2161,7 @@ isChinese('我是测试的字  abc  符串');
  
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2170,7 +2190,7 @@ removeChinese('测试abc');
  
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2199,7 +2219,7 @@ escapeMetacharacter('\n\\?');
  
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2228,7 +2248,7 @@ escapeMetacharacterOfStr('我是测试的字abc\n符串');
  
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2258,7 +2278,7 @@ camelize('escape-metacharacter-of-str');
   
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 
@@ -2287,7 +2307,7 @@ hyphenate('escapeMetacharacterOfStr');
  
 ```
 
-> 特殊说明:无
+> 特殊说明:[无]
 
 <br>
 

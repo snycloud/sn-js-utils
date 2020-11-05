@@ -42,33 +42,63 @@ describe('测试 StringUtil 工具类', function () {
 
     // 判断字符串是否以某个字符串开头
     describe('测试 startsWith 方法', function () {
-        it('input为a2dfcfar1bzvb2时,a的位置等于0时,返回true', function () {
-            expect(utils.StringUtil.startsWith('a2dfcfar1bzvb2', 'a2')).to.be.equal(true);
+        it('input为abcdefg时,ab的位置等于0时,返回true', function () {
+            expect(utils.StringUtil.startsWith('abcdefg', 'ab')).to.be.equal(true);
+        });
+
+        it('input为abcdefg时,b的位置等于0时,返回true', function () {
+            expect(utils.StringUtil.startsWith('abcdefg', 'bc')).to.be.equal(false);
+        });
+
+        it('input为abcdefg时,a的位置等于0时,返回true', function () {
+            expect(utils.StringUtil.startsWith('abcdefg', 'a')).to.be.equal(true);
         });
     });
 
     // 判断字符串是否以某个字符串结束
     describe('测试 endsWith 方法', function () {
-        it('input为a2dfcfar1bzvb时,b的位置等于a2dfcfar1bzvb字符串总长度-1时,返回true', function () {
-            expect(utils.StringUtil.endsWith('a2dfcfar1bzvb', 'b')).to.be.equal(true);
+        it('input为abcdefg时,fg的位置等于abcdefg字符串总长度-1时,返回true', function () {
+            expect(utils.StringUtil.endsWith('abcdefg', 'fg')).to.be.equal(true);
         });
+
+        it('input为abcdefg时,f的位置等于abcdefg字符串总长度-1时,返回true', function () {
+            expect(utils.StringUtil.endsWith('abcdefg', 'ef')).to.be.equal(false);
+        });
+
+        it('input为abcdefg时,g的位置等于abcdefg字符串总长度-1时,返回true', function () {
+            expect(utils.StringUtil.endsWith('abcdefg', 'g')).to.be.equal(true);
+        });
+
+
     });
 
     // 判断字符串是否包含某个字符串
     describe('测试 contains 方法', function () {
-        it('input为a2dfcfar1bzvb2时,a的位置大于等于0时,表示a2dfcfar1bzvb2包含a,返回true', function () {
-            expect(utils.StringUtil.contains('a2dfcfar1bzvb2', 'a')).to.be.equal(true);
+        it('input为abcdefg时,a的位置大于等于0时,表示abcdefg包含a,返回true', function () {
+            expect(utils.StringUtil.contains('abc', 'abc')).to.be.equal(true);
+        });
+
+        it('input为abcdefg时,a的位置大于等于0时,表示abcdefg包含a,返回true', function () {
+            expect(utils.StringUtil.contains('abcdefg', 'gh')).to.be.equal(false);
+        });
+
+        it('input为abcdefg时,a的位置大于等于0时,表示abcdefg包含a,返回true', function () {
+            expect(utils.StringUtil.contains('abc defg', ' ')).to.be.equal(true);
         });
     });
 
     // 判断两个字符串是否相等
     describe('测试 equals 方法', function () {
         it('input1为2222,input2为2222,返回true', function () {
-            expect(utils.StringUtil.equals(2222, 2222)).to.be.equal(true);
+            expect(utils.StringUtil.equals(220022, 220022)).to.be.equal(true);
         });
 
         it('input1为我不是测试的字符串,input2为我是测试的字符串时,返回false', function () {
             expect(utils.StringUtil.equals('我不是测试的字符串 ', '我是测试的字符串')).to.be.equal(false);
+        });
+
+        it('input1为我是测试的字符串,input2为我是测试的字符串时,返回false', function () {
+            expect(utils.StringUtil.equals('我是测试的 字符串 ', '我是测试的字符串')).to.be.equal(false);
         });
     });
 
@@ -89,6 +119,10 @@ describe('测试 StringUtil 工具类', function () {
             expect(utils.StringUtil.containsWhitespace('我是测试的字符串')).to.be.equal(false);
         });
 
+        it('input为 我是测试的字符串时 ,返回false', function () {
+            expect(utils.StringUtil.containsWhitespace('  我是测试的字符串  ')).to.be.equal(true);
+        });
+
         it('input为我是 测试 的 字符串时  ,返回true', function () {
             expect(utils.StringUtil.containsWhitespace('我是 测试 的 字符串  ')).to.be.equal(true);
         });
@@ -102,6 +136,10 @@ describe('测试 StringUtil 工具类', function () {
 
         it('input为C  D时,repeatTimes为3时,返回3个input的字符串', function () {
             expect(utils.StringUtil.repeat('C  D', 3)).to.be.equal('C  DC  DC  D');
+        });
+
+        it('input为20时,repeatTimes为3时,返回3个input的字符串', function () {
+            expect(utils.StringUtil.repeat('20', 3)).to.be.equal('202020');
         });
     });
 
@@ -143,12 +181,18 @@ describe('测试 StringUtil 工具类', function () {
         it('input为admin时,返回为首字母转大写后的字符串', function () {
             expect(utils.StringUtil.capitalize('admin')).to.be.equal('Admin');
         });
+        it('input为capitalize时,返回为首字母转大写后的字符串', function () {
+            expect(utils.StringUtil.capitalize('capitalize')).to.be.equal('Capitalize');
+        });
     });
 
     //将字符串首字母转小写
     describe('测试 unCapitalize 方法', function () {
         it('input为Capitalize时,返回为capitalize', function () {
             expect(utils.StringUtil.unCapitalize('Capitalize')).to.be.equal('capitalize');
+        });
+        it('input为Capitalize时,返回为capitalize', function () {
+            expect(utils.StringUtil.unCapitalize('SetTimeout')).to.be.equal('setTimeout');
         });
     });
 
@@ -177,7 +221,7 @@ describe('测试 StringUtil 工具类', function () {
     // 判断字符串是否为字母
     describe('测试 isAlpha 方法', function () {
         it('input为我是测试的字符串时,返回为false', function () {
-            expect(utils.StringUtil.isAlpha('我是测试的字符串')).to.be.equal(false);
+            expect(utils.StringUtil.isAlpha('abce测试')).to.be.equal(false);
         });
 
         it('input为abcdeabcdeabcde时,返回为true', function () {
@@ -188,7 +232,7 @@ describe('测试 StringUtil 工具类', function () {
     // 判断字符串是否为字母、空格
     describe('测试 isAlphaSpace 方法', function () {
         it('input为 测试 时,返回为false', function () {
-            expect(utils.StringUtil.isAlphaSpace(' 测试 ')).to.be.equal(false);
+            expect(utils.StringUtil.isAlphaSpace(' abc 测试 ')).to.be.equal(false);
         });
 
         it('input为abcd eabc deab cde时,返回为true', function () {

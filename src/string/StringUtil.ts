@@ -45,12 +45,14 @@ function trim(input: string): string {
 
 /**
  * 判断字符串是否以某个字符串开头
- * @param {string} input 输入字符串，如' a2dfcfar1bzvb2 '
- * @param {string} prefix 输入字符串，如'a'
+ * @param {string} input 输入字符串，如' abcdefg'
+ * @param {string} prefix 输入字符串，如'ab'
  * @returns {boolean} 是/否
  *
  * @example
- *  startsWith('a2dfcfar1bzvb2','a'); // true
+ *  startsWith('abcdefg','ab'); // true
+ *  startsWith('abcdefg','bc'); // false
+ *  startsWith('abcdefg','a'); // true
  */
 function startsWith(input: string, prefix: string): boolean {
     return input.indexOf(prefix) === 0;
@@ -58,25 +60,31 @@ function startsWith(input: string, prefix: string): boolean {
 
 /**
  * 判断字符串是否以某个字符串结束
- * @param {String} input 输入字符串，如' a2dfcfar1bzvb '
- * @param {string} suffix 输入字符串，如'b'
+ * @param {String} input 输入字符串，如' abcdefg '
+ * @param {string} suffix 输入字符串，如'fg'
  * @returns {boolean} 是/否
  *
  * @examplec
- *  endsWith('a2dfcfar1bzvb','b'); // true
+ *  endsWith('abcdefg', 'fg'); // true
+ *  endsWith('abcdefg', 'ef'); // false
+ *  endsWith('abcdefg', 'g'); // true
  */
 function endsWith(input: string, suffix: string): boolean {
-    return input.lastIndexOf(suffix) === (input.length - 1);
+    return input.endsWith(suffix);
+    // return input.lastIndexOf(suffix) === (input.length - suffix.length);
+
 }
 
 /**
  * 判断字符串是否包含某个字符串
- * @param {String} input 输入字符串，如'a2dfcfar1bzvb2'
- * @param {string} searchSeq 输入字符串，如'b'
+ * @param {String} input 输入字符串，如'abcdefg'
+ * @param {string} searchSeq 输入字符串，如'abc'
  * @returns {boolean} 是/否
  *
  * @example
- *  contains('2a2dfcfar1bzvb2','2'); // true
+ *  contains('abcdefg', 'abc'); // true
+ *  contains('abcdefg', 'gh'); // false
+ *  contains('abcdefg', 'a'); // true
  */
 function contains(input: string, searchSeq: string): boolean {
     return input.indexOf(searchSeq) >= 0;
@@ -89,7 +97,8 @@ function contains(input: string, searchSeq: string): boolean {
  * @returns {boolean} 是/否
  *
  * @example
- *  equals('我是测试的字符串', '我是测试的字符串'); // true
+ *  equals(220022, 220022); // true
+ *  equals('我是测试的 字符串  ', '我是测试的字符串'); // false
  *  equals('我不是测试的字符串 ', '我是测试的字符串'); // false
  */
 function equals(input1: string | number, input2: string | number): boolean {
@@ -118,6 +127,7 @@ function equalsIgnoreCase(input1: string, input2: string): boolean {
  * @example
  *  containsWhitespace('我是 测试 的 字符串  '); // true
  *  containsWhitespace('我是测试的字符串'); // false
+ *  containsWhitespace('  我是测试的字符串  '); // true
  */
 function containsWhitespace(input: string): boolean {
     const reg = /\s/;
@@ -133,6 +143,7 @@ function containsWhitespace(input: string): boolean {
  * @example
  *  repeat('AB ',6); // 'AB AB AB AB AB AB '
  *  repeat('C  D',3); //'C  DC  DC  D'
+ *  repeat('20', 3); //'202020'
  */
 function repeat(ch: string | number, repeatTimes: number): string {
     let result = '';
@@ -192,6 +203,7 @@ function leftPad(input: string | number, size: number, padStr: number | string):
  *
  * @example
  *  capitalize('admin'); // 'Admin'
+ *  capitalize('capitalize'); // 'Capitalize'
  */
 function capitalize(input: string): string {
     input = input.replace(input[0], input[0].toUpperCase());
@@ -205,6 +217,7 @@ function capitalize(input: string): string {
  *
  * @example
  * unCapitalize('Capitalize'); // 'capitalize'
+ * unCapitalize('SetTimeout'); // 'setTimeout'
  */
 function unCapitalize(input: string): string {
     input = input.replace(input[0], input[0].toLowerCase());
@@ -248,10 +261,9 @@ function countMatches(input: string, sub: string): number {
     let index = 0;
     // tslint:disable-next-line
     while ((index = input.indexOf(sub, index)) !== -1) {
-        index += sub.length;
+        index = input.indexOf(sub, index) + sub.length;
         count++;
     }
-    // @ts-ignore
     return count;
 }
 
@@ -261,7 +273,7 @@ function countMatches(input: string, sub: string): number {
  * @returns  {boolean} 是/否
  *
  * @example
- *  isAlpha('我是测试的字符串'); // false
+ *  isAlpha('abce测试'); // false
  *  isAlpha('abcdeabcdeabcde'); // true
  */
 function isAlpha(input: string): boolean {
@@ -275,7 +287,7 @@ function isAlpha(input: string): boolean {
  * @returns {boolean} 是/否
  *
  * @example
- *  isAlphaSpace(' 测试 '); // false
+ *  isAlphaSpace(' abc 测试 '); // false
  *  isAlphaSpace('abcd eabc deab cde'); // true
  */
 function isAlphaSpace(input: string): boolean {
