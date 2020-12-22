@@ -51,6 +51,16 @@ declare function maskPhone(phone: string, start?: number, len?: number): string;
  */
 declare function maskIDCard(idcard: string, start?: number, len?: number): string;
 /**
+ * 对邮箱进行去敏处理
+ * @param email
+ */
+declare function maskEMail(email: string): string;
+/**
+ * 对姓名进行去敏处理
+ * @param name
+ */
+declare function maskName(name: string): string;
+/**
  * 对一个字符串进行去敏处理
  * @param text 原始字符串(必填)
  * @param start 开头保留多少位明文(必填)
@@ -63,12 +73,14 @@ declare function maskIDCard(idcard: string, start?: number, len?: number): strin
  *   mask('123456', 2, 3, 4)
  *   // => '12****456'
  */
-declare function mask(text: string, start: number, end: number, len: number): string;
+declare function mask(text: string, start: number, end: number, len?: number): string;
 declare const _default: {
     phoneIsValid: typeof phoneIsValid;
     maskPhone: typeof maskPhone;
     idcardIsValid: typeof idcardIsValid;
     maskIDCard: typeof maskIDCard;
     mask: typeof mask;
+    maskName: typeof maskName;
+    maskEMail: typeof maskEMail;
 };
 export default _default;
