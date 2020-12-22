@@ -1,6 +1,6 @@
 {
   "name": "sn-js-utils",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "JS | TS 常用工具类库",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.esm.js",
