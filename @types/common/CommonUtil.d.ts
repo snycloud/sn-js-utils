@@ -50,10 +50,25 @@ declare function maskPhone(phone: string, start?: number, len?: number): string;
  *   // => '110410**********34'
  */
 declare function maskIDCard(idcard: string, start?: number, len?: number): string;
+/**
+ * 对一个字符串进行去敏处理
+ * @param text 原始字符串(必填)
+ * @param start 开头保留多少位明文(必填)
+ * @param end 结尾保留多少位明文(必填)
+ * @param len 中间显示多少个*
+ *
+ * @example
+ *   mask('123456', 2, 3)
+ *   // => '12*456'
+ *   mask('123456', 2, 3, 4)
+ *   // => '12****456'
+ */
+declare function mask(text: string, start: number, end: number, len: number): string;
 declare const _default: {
     phoneIsValid: typeof phoneIsValid;
     maskPhone: typeof maskPhone;
     idcardIsValid: typeof idcardIsValid;
     maskIDCard: typeof maskIDCard;
+    mask: typeof mask;
 };
 export default _default;

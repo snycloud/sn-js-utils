@@ -185,8 +185,8 @@ declare function swapCase(input: string): string;
  * @returns {number} 统计后字符串的个数
  *
  * @example
- *  countMatches('dabddadb', 'da'); // 3
- *  countMatches('abcdeabcdeabcde','ab'); // 6
+ *  countMatches('dabddadb', 'da'); // 2
+ *  countMatches('abcdeabcdeabcde','ab'); // 3
  */
 declare function countMatches(input: string, sub: string): number;
 /**
