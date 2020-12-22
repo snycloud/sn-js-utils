@@ -77,4 +77,40 @@ describe('测试 CommonUtil 工具类', function () {
             expect(utils.CommonUtil.maskIDCard('410482199001080000', -3, -8)).to.be.equal('410482199001080000');
         });
     });
+
+    describe('测试 mask 方法', function () {
+        // it('参数不合法', function () {
+        //
+        // });
+        it('start/end >= 明文字符串长度', function () {
+            expect(utils.CommonUtil.mask('123456', 6, 1)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 8, 1)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 2, 6)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 2, 8)).to.be.equal('123456');
+        });
+        it('start + end >= 明文字符串长度', function () {
+            expect(utils.CommonUtil.mask('123456', 4, 2)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 5, 2)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 2, 4)).to.be.equal('123456');
+            expect(utils.CommonUtil.mask('123456', 2, 5)).to.be.equal('123456');
+        });
+        it('start + end < 明文字符串长度', function () {
+            expect(utils.CommonUtil.mask('123456', 0, 0)).to.be.equal('******');
+            expect(utils.CommonUtil.mask('123456', 2, 0)).to.be.equal('12****');
+            expect(utils.CommonUtil.mask('123456', 0, 3)).to.be.equal('***456');
+            expect(utils.CommonUtil.mask('123456', 1, 3)).to.be.equal('1**456');
+            expect(utils.CommonUtil.mask('123456', 4, 1)).to.be.equal('1234*6');
+            expect(utils.CommonUtil.mask('123456', 5, 0)).to.be.equal('12345*');
+            expect(utils.CommonUtil.mask('123456', 2, 3)).to.be.equal('12*456');
+            expect(utils.CommonUtil.mask('123456', 0, 5)).to.be.equal('*23456');
+        });
+        it('指定len参数', function () {
+            expect(utils.CommonUtil.mask('123456', 0, 0, 3)).to.be.equal('***');
+            expect(utils.CommonUtil.mask('123456', 2, 0, 2)).to.be.equal('12**');
+            expect(utils.CommonUtil.mask('123456', 0, 3, 5)).to.be.equal('*****456');
+            expect(utils.CommonUtil.mask('123456', 1, 3, 1)).to.be.equal('1*456');
+            expect(utils.CommonUtil.mask('123456', 1, 3, 0)).to.be.equal('1456');
+            expect(utils.CommonUtil.mask('123456', 4, 3, 6)).to.be.equal('1234******456');
+        });
+    });
 });
