@@ -122,9 +122,46 @@ function maskIDCard(idcard: string, start: number = 6, len: number = 8): string 
     return idcard.substr(0, start) + '*'.repeat(len) + idcard.substring(start + len);
 }
 
+/**
+ * 对一个字符串进行去敏处理
+ * @param text 原始字符串(必填)
+ * @param start 开头保留多少位明文(必填)
+ * @param end 结尾保留多少位明文(必填)
+ * @param len 中间显示多少个*
+ *
+ * @example
+ *   mask('123456', 2, 3)
+ *   // => '12*456'
+ *   mask('123456', 2, 3, 4)
+ *   // => '12****456'
+ */
+function mask(text: string, start: number, end: number, len: number): string {
+    if (!text) {
+        return text;
+    }
+    if (start < 0 || end < 0 || len < 0) {
+        throw new TypeError('参数不能小于0');
+    }
+
+    if (len === undefined) {
+        // 没有指定 len 参数，则根据原始字符串长度计算
+        if (start >= text.length || end >= text.length) {
+            return text;
+        }
+        if (start + end >= text.length) {
+            return text;
+        }
+        return text.substr(0, start) + '*'.repeat(Math.max(text.length - start - end, 0)) +
+            text.substring(text.length - end);
+    } else {
+        return text.substr(0, start) + '*'.repeat(len) + text.substring(text.length - end);
+    }
+}
+
 export default {
     phoneIsValid,
     maskPhone,
     idcardIsValid,
     maskIDCard,
+    mask,
 };
