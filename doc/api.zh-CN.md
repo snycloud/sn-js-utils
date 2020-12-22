@@ -10,6 +10,7 @@
 [maskPhone 对手机号进行脱敏处理](#2-maskPhone)<br>
 [idcardIsValid 检查身份证是否合法](#3-idcardIsValid)<br>
 [maskIDCard 对身份证进行脱敏处理](#4-maskIDCard)<br>
+[mask](#5-mask)<br>
 
 <br>
 
@@ -347,7 +348,7 @@ idcardIsValid('410482199001080000')
 **maskIDCard(idcard: string, start: number = 6, len: number = 8)**
 
 * 方法详细介绍<br>
-**对身份证进行去敏处理，用*替换**
+**对身份证进行去敏处理，用\*替换**
 
 * 参数
 
@@ -372,6 +373,27 @@ maskIDCard('110410199001011234', 6, 10)
 > 特别说明：无
 
 <br>
+
+### 5. mask()
+
+* 方法签名<br>
+  **mask(text: string, start: number, end: number, len: number)**
+
+* 方法详细介绍<br>
+  **对字符串进行去敏处理，用\*替换**
+
+* 参数
+
+| 参数 | 类型 | 是否必传 | 默认值 | 说明 |
+|:---|:----|:-----:|:------:|:---|
+| text     | String     | 是 |    无      | 原始字符串    |
+| start    | Number     | 是 |    无      | 开头显示明文字符数    |
+| end      | Number     | 是 |    无      | 结尾显示明文字符数    |
+| len      | Number     | 否 |    无      | 掩码字符长度，如果不传，则根据原始字符串长度计算剩余字符个数    |
+
+* 返回值<br>
+  **脱敏字符串**
+
 
 ---
 
