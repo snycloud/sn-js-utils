@@ -113,4 +113,32 @@ describe('测试 CommonUtil 工具类', function () {
             expect(utils.CommonUtil.mask('123456', 4, 3, 6)).to.be.equal('1234******456');
         });
     });
+
+    describe('测试 maskName 方法', function () {
+        it('正常输入', function () {
+            expect(utils.CommonUtil.maskName('123456')).to.be.equal('1*6');
+            expect(utils.CommonUtil.maskName('12')).to.be.equal('1*');
+            expect(utils.CommonUtil.maskName('张三')).to.be.equal('张*');
+            expect(utils.CommonUtil.maskName('张三丰')).to.be.equal('张*丰');
+            expect(utils.CommonUtil.maskName('蒙奇D路飞')).to.be.equal('蒙*飞');
+        });
+        it('异常输入', function () {
+            expect(utils.CommonUtil.maskName('')).to.be.equal('');
+            expect(utils.CommonUtil.maskName('张')).to.be.equal('张');
+        });
+    });
+
+    describe('测试 maskEMail 方法', function () {
+        it('正常输入', function () {
+            expect(utils.CommonUtil.maskEMail('123456@jz-ins.cn')).to.be.equal('12***56@jz-ins.cn');
+            expect(utils.CommonUtil.maskEMail('12@jz-ins.cn')).to.be.equal('12***12@jz-ins.cn');
+            expect(utils.CommonUtil.maskEMail('张三@jz-ins.cn')).to.be.equal('张三***张三@jz-ins.cn');
+            expect(utils.CommonUtil.maskEMail('张三丰@jz-ins.cn')).to.be.equal('张三***三丰@jz-ins.cn');
+            expect(utils.CommonUtil.maskEMail('蒙奇D路飞@jz-ins.cn')).to.be.equal('蒙奇***路飞@jz-ins.cn');
+        });
+        it('异常输入', function () {
+            expect(utils.CommonUtil.maskEMail('')).to.be.equal('');
+            expect(utils.CommonUtil.maskEMail('张')).to.be.equal('张');
+        });
+    });
 });
