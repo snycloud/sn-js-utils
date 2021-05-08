@@ -1,24 +1,30 @@
 # 变更日志
 
-## 0.5.0 / 2018-12-17
+## 0.1.7 / 2020-12-22
 
-- TS支持测试源文件，改用nyc
+CommonUtil:
 
-## 0.4.0 / 2018-11-27
+- 增加 maskName 方法
+- 增加 maskEMail 方法
 
-- JS支持测试源文件，改用nyc
+## 0.1.6 / 2020-12-22
 
-## 0.3.0 / 2018-11-23
+CommonUtil:
 
-- 添加对typescript的支持
-- 升级babel7
-- 添加对测试覆盖率的支持
-- 文档添加emoji
+- 增加 mask 通用方法
 
-## 0.2.0 / 2018-3-10
+## 0.1.5-rc.10 / 2019-03-22
 
-- 支持banner
-- 添加es5-shim
+CommonUtil:
+
+- 增加 phoneIsValid 方法
+- 增加 maskPhone 方法
+- 增加 idcardIsValid 方法
+- 增加 maskIDCard 方法
+
+DateUtil:
+
+
 
 ## 0.1.0 / 2018-3-1
 

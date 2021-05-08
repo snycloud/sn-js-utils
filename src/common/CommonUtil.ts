@@ -123,6 +123,32 @@ function maskIDCard(idcard: string, start: number = 6, len: number = 8): string 
 }
 
 /**
+ * 对邮箱进行去敏处理
+ * @param email
+ */
+function maskEMail(email: string): string {
+    return email && email.replace(/(.*?)(@.+)/g, (_: string, name: string, suffix: string): string => {
+        return mask(name, 2, 2, 3) + suffix;
+    });
+}
+
+/**
+ * 对姓名进行去敏处理
+ * @param name
+ */
+function maskName(name: string): string {
+    if (!name) {
+        return name;
+    }
+
+    if (name.length <= 2) {
+        return mask(name, 1, 0);
+    } else {
+        return mask(name, 1, 1, 1);
+    }
+}
+
+/**
  * 对一个字符串进行去敏处理
  * @param text 原始字符串(必填)
  * @param start 开头保留多少位明文(必填)
@@ -135,7 +161,7 @@ function maskIDCard(idcard: string, start: number = 6, len: number = 8): string 
  *   mask('123456', 2, 3, 4)
  *   // => '12****456'
  */
-function mask(text: string, start: number, end: number, len: number): string {
+function mask(text: string, start: number, end: number, len?: number): string {
     if (!text) {
         return text;
     }
@@ -158,10 +184,14 @@ function mask(text: string, start: number, end: number, len: number): string {
     }
 }
 
+
+
 export default {
     phoneIsValid,
     maskPhone,
     idcardIsValid,
     maskIDCard,
     mask,
+    maskName,
+    maskEMail,
 };
